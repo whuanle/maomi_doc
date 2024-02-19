@@ -2,7 +2,9 @@
 
 作者：痴者工良
 
-地址：[https://maomi.whuanle.cn](https://maomi.whuanle.cn)
+文档地址：[https://maomi.whuanle.cn](https://maomi.whuanle.cn)
+
+仓库地址：[https://github.com/whuanle/maomi](https://github.com/whuanle/maomi)
 
 ## 导读
 
