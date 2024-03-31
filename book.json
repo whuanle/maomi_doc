@@ -73,8 +73,8 @@
     },
     "head-append": {
       "code": [
-        "<script type=\"text/javascript\">",
-        "</script>"
+        "<SCRIPTTAG>",
+        "</SCRIPTTAG>"
       ]
     }
   }
