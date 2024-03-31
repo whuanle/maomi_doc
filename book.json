@@ -11,6 +11,7 @@
     "alerts",
     "popup",
     "prism",
+    "scripts",
     "hide-element",
     "head-append",
     "-highlight",
