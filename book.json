@@ -84,11 +84,5 @@
         "</SCRIPTTAG>"
       ]
     }
-  },
-  "structure": {
-    "readme": "./README.md",
-    "chapters": [
-      "./SUMMARY.md"
-    ]
   }
 }
