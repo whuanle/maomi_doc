@@ -1,0 +1,1360 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>8.事件总线框架的设计 · Maomi 开发框架文档- 痴者工良</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="痴者工良">
+        
+        
+    
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="9.dt.html" />
+    
+    
+    <link rel="prev" href="7.http.html" />
+    
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+})();
+</script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.whuanle.cn" target="_blank" class="custom-link">痴者工良的博客</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://beian.miit.gov.cn/" target="_blank" class="custom-link">粤ICP备18051778号</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    使用篇
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    模块化和自动服务注册
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    多语言
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    swagger
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    设计篇
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="1.module.html">
+            
+                <a href="1.module.html">
+            
+                    
+                    1.模块化和自动服务注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="2.design_module.html">
+            
+                <a href="2.design_module.html">
+            
+                    
+                    2.模块化和自动服务注册的设计和实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="3.0.gz_log.html">
+            
+                <a href="3.0.gz_log.html">
+            
+                    
+                    3.故障诊断和日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="3.1.design_log.html">
+            
+                <a href="3.1.design_log.html">
+            
+                    
+                    3.1.自定义开发日志框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="3.2.serilog.html">
+            
+                <a href="3.2.serilog.html">
+            
+                    
+                    3.2. .NET 日志使用技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="3.3.diagostics.html">
+            
+                <a href="3.3.diagostics.html">
+            
+                    
+                    3.3.开发 .NET 诊断工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="4.pz.html">
+            
+                <a href="4.pz.html">
+            
+                    
+                    4.配置和选项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="5.xlh.html">
+            
+                <a href="5.xlh.html">
+            
+                    
+                    5.NET 中的序列化和反序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="6.i18n.html">
+            
+                <a href="6.i18n.html">
+            
+                    
+                    6.多语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="7.http.html">
+            
+                <a href="7.http.html">
+            
+                    
+                    7.http 应用开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter active" data-level="11.1" data-path="8.event.html">
+            
+                <a href="8.event.html">
+            
+                    
+                    8.事件总线框架的设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="12.1" data-path="9.dt.html">
+            
+                <a href="9.dt.html">
+            
+                    
+                    9.动态代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="13.1" data-path="10.web.html">
+            
+                <a href="10.web.html">
+            
+                    
+                    10.Web 框架定制开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="14.1" data-path="11.mapper.html">
+            
+                <a href="11.mapper.html">
+            
+                    
+                    11.对象映射框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >8.事件总线框架的设计</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;"><b></b>&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;</a></li><ul><ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;"><b></b>&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;</a></li><li><span class="title-icon "></span><a href="#&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x7684;&#x8BBE;&#x8BA1;"><b></b>&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x7684;&#x8BBE;&#x8BA1;</a></li><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x4E8B;&#x4EF6;"><b></b>&#x4F7F;&#x7528;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x4E8B;&#x4EF6;</a></li></ul></ul></ul></div><h1 id="&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;"><a name="&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;" class="anchor-navigation-ex-anchor" href="#&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;</h1>
+<p>&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x5E38;&#x5E38;&#x4F5C;&#x4E3A;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x4E2D;&#x89E3;&#x8026;&#x5404;&#x4E2A;&#x7EC4;&#x4EF6;&#x901A;&#x8BAF;&#x7684;&#x5DE5;&#x5177;&#x3002;&#x5728;&#x9886;&#x57DF;&#x9A71;&#x52A8;&#x8BBE;&#x8BA1;&#x7684;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x7531;&#x4E8E;&#x7CFB;&#x7EDF;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x51FD;&#x6570;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x8C03;&#x7528;&#xFF0C;&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x4F5C;&#x4E3A;&#x5A92;&#x4ECB;&#x8FDB;&#x884C;&#x6A21;&#x5757;&#x95F4;&#x7684;&#x901A;&#x8BAF;&#xFF0C;&#x89E3;&#x8026;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x3002;</p>
+<p>&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#x6211;&#x4EEC;&#x5C06;&#x4F1A;&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x6846;&#x67B6;&#xFF0C;&#x672C;&#x6587;&#x53C2;&#x8003;&#x4E86;&#x5F88;&#x591A; MASA Framework &#x6846;&#x67B6;&#x4E2D;&#x5BF9;&#x4E8E;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x7684;&#x8BBE;&#x8BA1;&#x3002;</p>
+<h3 id="&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;"><a name="&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;</h3>
+<p>&#x5728;&#x7F16;&#x5199;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x6846;&#x67B6;&#x4E4B;&#x524D;&#xFF0C;&#x9996;&#x5148;&#x4E86;&#x89E3; Maomi.EventBus &#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x5176;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x53C2;&#x8003; Demo8.Console &#x9879;&#x76EE;&#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7; nuget &#x5F15;&#x5165; Maomi.EventBus &#x5305;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6765;&#x6A21;&#x62DF;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x7684;&#x6D41;&#x7A0B;&#xFF0C;&#x6A21;&#x62DF;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x6D41;&#x7A0B;&#x3002;&#x5047;&#x8BBE;&#x7528;&#x6237;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;&#x540E;&#xFF0C;&#x7CFB;&#x7EDF;&#x7684;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#x662F;&#x68C0;&#x67E5;&#x9A8C;&#x8BC1;&#x7801;&#x3001;&#x5C06;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x5199;&#x5230; Users &#x8868;&#x4E2D;&#x3001;&#x521D;&#x59CB;&#x5316;&#x7528;&#x6237;&#x6570;&#x636E;&#x3001;&#x53D1;&#x9001;&#x7535;&#x5B50;&#x90AE;&#x7BB1;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x662F;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#x7C7B;&#xFF0C;&#x6A21;&#x578B;&#x7C7B;&#x5FC5;&#x987B;&#x7EE7;&#x627F; Event &#x62BD;&#x8C61;&#x7C7B;&#x6216; IEvent &#x63A5;&#x53E3;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">record</span> <span class="token class-name"><span class="token keyword">class</span></span> MyEvent <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">Event</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Name <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> EMail <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> <span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token interpolation-string"><span class="token string">$&quot;&#x7528;&#x6237;&#x540D;:    </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">Name</span><span class="token punctuation">}</span></span><span class="token string"> &#xFF0C;&#x90AE;&#x7BB1;:    </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">EMail</span><span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x63A5;&#x7740;&#x8981;&#x7F16;&#x5199;&#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x5668;&#xFF0C;&#x5728; Maomi.EventBus &#x4E2D;&#xFF0C;&#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#xFF0C;&#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x547D;&#x540D;&#x6CA1;&#x6709;&#x7EA6;&#x675F;&#xFF0C;&#x53EA;&#x8981;&#x6C42;&#x65B9;&#x6CD5;&#x53C2;&#x6570;&#x5305;&#x542B; <code>MyEvent</code> &#x4E8B;&#x4EF6;&#x5373;&#x53EF;&#xFF0C;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x6240;&#x5728;&#x7684;&#x7C7B;&#x578B;&#x4E0D;&#x9700;&#x8981;&#x7EE7;&#x627F;&#x4EFB;&#x4F55;&#x63A5;&#x53E3;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4F7F;&#x7528; <code>EventAttribute</code> &#x7279;&#x6027;&#x6807;&#x8BB0;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x662F;&#x68C0;&#x67E5;&#x7528;&#x6237;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x662F;&#x5426;&#x6B63;&#x786E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Event</span></span><span class="token punctuation">]</span> <span class="token comment">// &#x6807;&#x8BB0;&#x6B64;&#x7C7B;&#x578B;&#x91CC;&#x6709;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CheckImageCodeEventHandler</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// &#x6807;&#x8BB0;&#x8BE5;&#x65B9;&#x6CD5;&#x662F;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x6267;&#x884C;&#x987A;&#x5E8F;</span>
+    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">EventHandler</span><span class="token attribute-arguments"><span class="token punctuation">(</span>Order <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Check</span><span class="token punctuation">(</span><span class="token class-name">MyEvent</span> @<span class="token keyword">event</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>@<span class="token keyword">event</span><span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5F53;&#x6846;&#x67B6;&#x626B;&#x63CF;&#x5230; CheckImageCodeEventHandler &#x5E26;&#x6709; <code>Event</code> &#x6807;&#x8BC6;&#x65F6;&#xFF0C;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x6CE8;&#x518C;&#x5230;&#x5BB9;&#x5668;&#x4E2D;&#xFF0C;&#x5176;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E3A; scope&#x3002;&#x7531;&#x4E8E; CheckImageCodeEventHandler &#x88AB;&#x6CE8;&#x518C;&#x5230;&#x5BB9;&#x5668;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x6CE8;&#x5165;&#x5176;&#x5B83;&#x670D;&#x52A1;&#x3002;</p>
+<p><code>[EventHandler(Order = 0)]</code> &#x5B9A;&#x4E49;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x540E;&#x8BE5;&#x6267;&#x884C;&#x5668;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x3002;&#x6BCF;&#x4E2A;&#x4E8B;&#x4EF6;&#x90FD;&#x6709;&#x591A;&#x4E2A;&#x6267;&#x884C;&#x5668;&#xFF0C;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x662F;&#x6709;&#x987A;&#x5E8F;&#x7684;&#xFF0C;&#x901A;&#x8FC7; <code>EventHandlerAttribute.Order</code> &#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x4E2D;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA2;&#x9605;&#x540C;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8BA2;&#x9605;&#x4E0D;&#x540C;&#x7684;&#x4E8B;&#x4EF6;&#x3002;&#x6BCF;&#x4E2A;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x987A;&#x5E8F;&#x7684;&#x7684;&#x64A4;&#x9500;&#x5668;&#x5668;&#xFF0C;&#x7531;&#x4E8E;&#x56DE;&#x6EDA;&#x64A4;&#x9500;&#x4E4B;&#x524D;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x5728;&#x7F16;&#x5199;&#x9A8C;&#x8BC1;&#x7801;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x5B8C;&#x5584;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x8FC7;&#x7A0B;&#xFF0C;&#x5176;&#x5B8C;&#x6574;&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Event</span></span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserRegisterEventHandler</span>
+<span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">EventHandler</span><span class="token attribute-arguments"><span class="token punctuation">(</span>Order <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">InsertDb</span><span class="token punctuation">(</span><span class="token class-name">MyEvent</span> @<span class="token keyword">event</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> state <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Next</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>state <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x221A; &#x7528;&#x6237;&#x4FE1;&#x606F;&#x5DF2;&#x6DFB;&#x52A0;&#x5230;&#x6570;&#x636E;&#x5E93;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Exception</span><span class="token punctuation">(</span><span class="token string">&quot;&#xD7; &#x5199;&#x5165;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x5230;&#x6570;&#x636E;&#x5E93;&#x5931;&#x8D25;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">EventHandler</span><span class="token attribute-arguments"><span class="token punctuation">(</span>Order <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> IsCancel <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">CancelInsertDb</span><span class="token punctuation">(</span><span class="token class-name">MyEvent</span> @<span class="token keyword">event</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6CE8;&#x518C;&#x5931;&#x8D25;&#xFF0C;&#x5237;&#x65B0;&#x9A8C;&#x8BC1;&#x7801;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">EventHandler</span><span class="token attribute-arguments"><span class="token punctuation">(</span>Order <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">InitUser</span><span class="token punctuation">(</span><span class="token class-name">MyEvent</span> @<span class="token keyword">event</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> state <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Next</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>state <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x221A; &#x521D;&#x59CB;&#x5316;&#x7528;&#x6237;&#x6570;&#x636E;&#xFF0C;&#x7CFB;&#x7EDF;&#x751F;&#x6210;&#x9ED8;&#x8BA4;&#x7528;&#x6237;&#x6743;&#x9650;&#x3001;&#x6570;&#x636E;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Exception</span><span class="token punctuation">(</span><span class="token string">&quot;&#xD7; &#x521D;&#x59CB;&#x5316;&#x7528;&#x6237;&#x6570;&#x636E;&#x5931;&#x8D25;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">EventHandler</span><span class="token attribute-arguments"><span class="token punctuation">(</span>Order <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> IsCancel <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">CancelInitUser</span><span class="token punctuation">(</span><span class="token class-name">MyEvent</span> @<span class="token keyword">event</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x64A4;&#x9500;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x4FE1;&#x606F;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">EventHandler</span><span class="token attribute-arguments"><span class="token punctuation">(</span>Order <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">SendEmail</span><span class="token punctuation">(</span><span class="token class-name">MyEvent</span> @<span class="token keyword">event</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> state <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Next</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>state <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x221A; &#x53D1;&#x9001;&#x9A8C;&#x8BC1;&#x90AE;&#x4EF6;&#x6210;&#x529F;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Exception</span><span class="token punctuation">(</span><span class="token string">&quot;&#xD7; &#x53D1;&#x9001;&#x9A8C;&#x8BC1;&#x90AE;&#x4EF6;&#x5931;&#x8D25;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">EventHandler</span><span class="token attribute-arguments"><span class="token punctuation">(</span>Order <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> IsCancel <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">CancelSendEmail</span><span class="token punctuation">(</span><span class="token class-name">MyEvent</span> @<span class="token keyword">event</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#xD7; &#x64A4;&#x9500;&#x521D;&#x59CB;&#x5316;&#x7528;&#x6237;&#x6570;&#x636E;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x6BCF;&#x4E2A;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x90FD;&#x6709;&#x5176;&#x6267;&#x884C;&#x987A;&#x5E8F;&#xFF0C;&#x800C;&#x4E14;&#x90FD;&#x914D;&#x6709;&#x4E00;&#x4E2A;&#x64A4;&#x9500;&#x5668;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x6807;&#x8BB0; <code>IsCancel = true</code> &#x5373;&#x53EF;&#xFF0C;&#x6267;&#x884C;&#x5668;&#x548C;&#x64A4;&#x9500;&#x5668;&#x4E5F;&#x53EF;&#x4EE5;&#x53EF;&#x4EE5;&#x5206;&#x5F00;&#x653E;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x6267;&#x884C;&#x5230; <code>SendEmail</code> &#x65F6;&#x51FA;&#x73B0;&#x9519;&#x8BEF;&#xFF0C;&#x6846;&#x67B6;&#x4F1A;&#x9010;&#x4E2A;&#x6267;&#x884C;&#x64A4;&#x9500;&#x5668;&#xFF0C;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x4E3A; <code>CancelSendEmail</code>&#x3001;<code>CancelInitUser</code>&#x3001;<code>CancelInsertDb</code> &#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E2D;&#x95F4;&#x4EF6;&#x62E6;&#x622A;&#x4E8B;&#x4EF6;&#xFF0C;&#x8BB0;&#x5F55;&#x4E8B;&#x4EF6;&#x65E5;&#x5FD7;&#x4EE5;&#x53CA;&#x5224;&#x65AD;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x8BE5;&#x4E8B;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LoggingMiddleware<span class="token punctuation">&lt;</span>TEvent<span class="token punctuation">&gt;</span></span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IEventMiddleware<span class="token punctuation">&lt;</span>TEvent<span class="token punctuation">&gt;</span></span></span> <span class="token keyword">where</span> <span class="token class-name">TEvent</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IEvent</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token return-type class-name">Task</span> <span class="token function">HandleAsync</span><span class="token punctuation">(</span><span class="token class-name">TEvent</span> @<span class="token keyword">event</span><span class="token punctuation">,</span> <span class="token class-name">EventHandlerDelegate</span> next<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;----- Handling command {0} ({1})&quot;</span><span class="token punctuation">,</span> @<span class="token keyword">event</span><span class="token punctuation">.</span><span class="token function">GetType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Name<span class="token punctuation">,</span> @<span class="token keyword">event</span><span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E2D;&#x95F4;&#x4EF6;&#x62E6;&#x622A;&#x5668;&#x5224;&#x65AD;&#x662F;&#x5426;&#x9700;&#x8981;&#x6267;&#x884C;&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x4E8B;&#x4EF6;&#xFF0C;&#x5219;&#x4F7F;&#x7528; <code>awat next();</code>&#x3002;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;&#x4E8B;&#x52A1;&#x5305;&#x88F9; <code>await next();</code>&#xFF0C;&#x4F7F;&#x5F97;&#x8BE5;&#x4E8B;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;&#x90FD;&#x80FD;&#x5728;&#x6570;&#x636E;&#x5E93;&#x56DE;&#x6EDA;&#xFF0C;&#x51CF;&#x5C11;&#x624B;&#x52A8;&#x7F16;&#x5199;&#x64A4;&#x9500;&#x7684;&#x4EE3;&#x7801;&#x91CF;&#xFF0C;&#x4EE5;&#x53CA;&#x589E;&#x52A0;&#x53EF;&#x9760;&#x6027;&#xFF0C;&#x9632;&#x6B62;&#x4EE3;&#x7801;&#x64A4;&#x9500;&#x8FC7;&#x7A0B;&#x4E2D;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#x3001;&#x7A0B;&#x5E8F;&#x5D29;&#x6E83;&#x5BFC;&#x81F4;&#x7684;&#x64A4;&#x9500;&#x5931;&#x8D25;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x662F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x7684;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x6CE8;&#x518C; <code>.AddEventBus()</code> &#x670D;&#x52A1;&#x5373;&#x53EF;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528; IEventBus &#x670D;&#x52A1;&#x53D1;&#x5E03;&#x4E8B;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">static</span> <span class="token keyword">async</span> <span class="token return-type class-name">Task</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name"><span class="token keyword">var</span></span> ioc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceCollection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ioc<span class="token punctuation">.</span><span class="token function">AddEventBus</span><span class="token punctuation">(</span><span class="token named-parameter punctuation">middleware</span><span class="token punctuation">:</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">LoggingMiddleware<span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ioc<span class="token punctuation">.</span><span class="token function">AddLogging</span><span class="token punctuation">(</span>build <span class="token operator">=&gt;</span> build<span class="token punctuation">.</span><span class="token function">AddConsole</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token class-name"><span class="token keyword">var</span></span> services <span class="token operator">=</span> ioc<span class="token punctuation">.</span><span class="token function">BuildServiceProvider</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name"><span class="token keyword">var</span></span> eventBus <span class="token operator">=</span> services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetRequiredService</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>IEventBus<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">await</span> eventBus<span class="token punctuation">.</span><span class="token function">PublishAsync</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token constructor-invocation class-name">MyEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Name <span class="token operator">=</span> <span class="token string">&quot;&#x5DE5;&#x826F;&quot;</span><span class="token punctuation">,</span>
+        EMail <span class="token operator">=</span> <span class="token string">&quot;&#x5DE5;&#x826F;@maomi.com&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x7684;&#x8BBE;&#x8BA1;"><a name="&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x7684;&#x8BBE;&#x8BA1;" class="anchor-navigation-ex-anchor" href="#&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x7684;&#x8BBE;&#x8BA1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x7684;&#x8BBE;&#x8BA1;</h3>
+<p>Maomi.EventBus &#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7EC4;&#x6210;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">// &#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#x63A5;&#x53E3;
+IEvent.cs
+// &#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#x62BD;&#x8C61;&#x5B9E;&#x73B0;
+Event.cs
+// &#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x63A5;&#x53E3;
+IEventBus.cs
+// &#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x5B9E;&#x73B0;
+EventBus.cs
+// &#x6269;&#x5C55;&#x51FD;&#x6570;
+EventBusExtensions.cs
+// &#x7279;&#x6027;&#x6807;&#x8BB0;
+EventHandlerAttribute.cs
+// &#x8BB0;&#x5F55;&#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x5668;&#x4FE1;&#x606F;
+EventInfo.cs
+// &#x4E8B;&#x4EF6;&#x4E2D;&#x95F4;&#x4EF6;
+IEventMiddleware.cs
+// &#x8868;&#x8FBE;&#x5F0F;&#x6811;&#x6784;&#x9020;&#x5668;
+InvokeBuilder.cs
+</code></pre>
+<h4 id="&#x63A5;&#x53E3;&#x62BD;&#x8C61;"><a name="&#x63A5;&#x53E3;&#x62BD;&#x8C61;" class="anchor-navigation-ex-anchor" href="#&#x63A5;&#x53E3;&#x62BD;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63A5;&#x53E3;&#x62BD;&#x8C61;</h4>
+<p>&#x9996;&#x5148;&#x662F;&#x6700;&#x7B80;&#x5355;&#x7684;&#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#xFF0C;&#x6BCF;&#x4E2A;&#x4E8B;&#x4EF6;&#x90FD;&#x5FC5;&#x987B;&#x7EE7;&#x627F;&#x8BE5;&#x63A5;&#x53E3;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x65E5;&#x5FD7;&#x4E2D;&#x8BB0;&#x5F55;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8C03;&#x8BD5;&#x548C;&#x6392;&#x67E5;&#x95EE;&#x9898;&#x65F6;&#xFF0C;&#x5FEB;&#x901F;&#x5B9A;&#x4F4D;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">// &#x4E8B;&#x4EF6;&#x63A5;&#x53E3;&#xFF0C;&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;&#x4F20;&#x9012;&#x53C2;&#x6570;</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IEvent</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// &#x4E8B;&#x4EF6;&#x552F;&#x4E00;&#x6807;&#x8BC6;</span>
+    <span class="token return-type class-name">Guid</span> <span class="token function">GetEventId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">SetEventId</span><span class="token punctuation">(</span><span class="token class-name">Guid</span> eventId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token return-type class-name">DateTime</span> <span class="token function">GetCreationTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">SetCreationTime</span><span class="token punctuation">(</span><span class="token class-name">DateTime</span> creationTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// &#x7B80;&#x5316;&#x4E8B;&#x4EF6;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;&#x4F20;&#x9012;&#x53C2;&#x6570;</span>
+<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">record</span> <span class="token class-name">Event</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IEvent</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">Guid</span> _eventId<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">DateTime</span> _creationTime<span class="token punctuation">;</span>
+
+    <span class="token keyword">protected</span> <span class="token function">Event</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">(</span>Guid<span class="token punctuation">.</span><span class="token function">NewGuid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> DateTime<span class="token punctuation">.</span>UtcNow<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">protected</span> <span class="token function">Event</span><span class="token punctuation">(</span><span class="token class-name">Guid</span> eventId<span class="token punctuation">,</span> <span class="token class-name">DateTime</span> creationTime<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        _eventId <span class="token operator">=</span> eventId<span class="token punctuation">;</span>
+        _creationTime <span class="token operator">=</span> creationTime<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token return-type class-name">Guid</span> <span class="token function">GetEventId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> _eventId<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">SetEventId</span><span class="token punctuation">(</span><span class="token class-name">Guid</span> eventId<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> _eventId <span class="token operator">=</span> eventId<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token return-type class-name">DateTime</span> <span class="token function">GetCreationTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> _creationTime<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">SetCreationTime</span><span class="token punctuation">(</span><span class="token class-name">DateTime</span> creationTime<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> _creationTime <span class="token operator">=</span> creationTime<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#x5B9A;&#x4E49;&#x4E86;&#x4E8B;&#x4EF6;&#x7684;&#x57FA;&#x672C;&#x683C;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;&#x8005;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7EE7;&#x627F; IEvent &#x6216; Event &#x6765;&#x6269;&#x5C55;&#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#x3002;</p>
+<p>&#x63A5;&#x7740;&#x662F;&#x4E24;&#x4E2A;&#x6267;&#x884C;&#x5668;&#x6A21;&#x578B;&#xFF0C;&#x5206;&#x522B;&#x6807;&#x8BB0;&#x7C7B;&#x578B;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;EventAttribute &#x7684;&#x4F5C;&#x7528;&#x4EC5;&#x4EC5;&#x662F;&#x544A;&#x8BC9;&#x7A0B;&#x5E8F;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x91CC;&#x9762;&#x6709;&#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x5668;&#x3002;&#x800C; EventHandlerAttribute &#x6807;&#x8BB0;&#x4E86;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x5668;&#xFF0C;&#x9700;&#x8981;&#x7ED1;&#x5B9A;&#x5230;&#x54EA;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x4EE5;&#x53CA;&#x5176;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">// &#x6807;&#x8BC6;&#x7C7B;&#x4E2D;&#x6709;&#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x5668;</span>
+<span class="token punctuation">[</span><span class="token function">AttributeUsage</span><span class="token punctuation">(</span>AttributeTargets<span class="token punctuation">.</span>Class<span class="token punctuation">,</span> AllowMultiple <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">,</span> Inherited <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">EventAttribute</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">Attribute</span></span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+<span class="token comment">// &#x6807;&#x8BC6;&#x65B9;&#x6CD5;&#x662F;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x5668;</span>
+<span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">AttributeUsage</span><span class="token attribute-arguments"><span class="token punctuation">(</span>AttributeTargets<span class="token punctuation">.</span>Method<span class="token punctuation">,</span> AllowMultiple <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">,</span> Inherited <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">EventHandlerAttribute</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">Attribute</span></span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// &#x4E8B;&#x4EF6;&#x6392;&#x5E8F;</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> Order <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// &#x662F;&#x5426;&#x4E3A;&#x64A4;&#x9500;&#x4E8B;&#x4EF6;</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">bool</span></span> IsCancel <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="&#x6267;&#x884C;&#x5668;&#x5C01;&#x88C5;"><a name="&#x6267;&#x884C;&#x5668;&#x5C01;&#x88C5;" class="anchor-navigation-ex-anchor" href="#&#x6267;&#x884C;&#x5668;&#x5C01;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6267;&#x884C;&#x5668;&#x5C01;&#x88C5;</h4>
+<p>&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x91C7;&#x7528;&#x975E;&#x63A5;&#x53E3;&#x7EE7;&#x627F;&#x7684;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#xFF0C;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x56FA;&#x5B9A;&#x7684;&#x540D;&#x79F0;&#x548C;&#x53C2;&#x6570;&#x683C;&#x5F0F;&#xFF0C;&#x6BD4;&#x8F83;&#x7075;&#x6D3B;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x6846;&#x67B6;&#x9700;&#x8981;&#x89E3;&#x51B3;&#x5982;&#x4F55;&#x8BC6;&#x522B;&#x4EE5;&#x53CA;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x4F1A;&#x6709;&#x4EE5;&#x4E0B;&#x56DB;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">// &#x540C;&#x6B65;&#x65B9;&#x6CD5;</span>
+<span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">My</span><span class="token punctuation">(</span><span class="token class-name">MyEvent</span> data<span class="token punctuation">)</span>
+<span class="token comment">// &#x5F02;&#x6B65;&#x65B9;&#x6CD5;</span>
+<span class="token return-type class-name">Task</span> <span class="token function">My</span><span class="token punctuation">(</span><span class="token class-name">MyEvent</span> data<span class="token punctuation">)</span>
+<span class="token comment">// &#x540C;&#x6B65;&#x53EF;&#x53D6;&#x6D88;</span>
+<span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">My</span><span class="token punctuation">(</span><span class="token class-name">MyEvent</span> data<span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken<span class="token punctuation">)</span>
+<span class="token comment">// &#x5F02;&#x6B65;&#x53EF;&#x53D6;&#x6D88;</span>
+<span class="token return-type class-name">Task</span> <span class="token function">My</span><span class="token punctuation">(</span><span class="token class-name">MyEvent</span> data<span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x7531;&#x4E8E;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x6709;&#x56DB;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x5F53;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x65F6;&#xFF0C;&#x6846;&#x67B6;&#x5982;&#x4F55;&#x626B;&#x63CF;&#x8BC6;&#x522B;&#x5E76;&#x6CE8;&#x518C;&#x6267;&#x884C;&#x5668;&#xFF1F;&#x5F53;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x4E4B;&#x540E;&#xFF0C;&#x6846;&#x67B6;&#x5E94;&#x8BE5;&#x5982;&#x4F55;&#x8C03;&#x7528;&#x6267;&#x884C;&#x5668;&#xFF1F;</p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x8FD9;&#x56DB;&#x79CD;&#x60C5;&#x51B5;&#x5206;&#x4E3A;&#x540C;&#x6B65;&#x65B9;&#x6CD5;&#x548C;&#x5F02;&#x6B65;&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x4E24;&#x79CD;&#x59D4;&#x6258;&#x5305;&#x88C5;&#xFF0C;&#x4F7F;&#x7528; <code>object target</code> &#x8868;&#x793A;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x4F7F;&#x7528; <code>params object?[] parameters</code> &#x6765;&#x8868;&#x793A;&#x53C2;&#x6570;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">// &#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x683C;&#x5F0F;&#xFF0C;&#x652F;&#x6301;&#x5F02;&#x6B65;&#x548C;&#x975E;&#x5F02;&#x6B65;&#x7684;&#x6267;&#x884C;&#x5668;</span>
+<span class="token keyword">internal</span> <span class="token keyword">delegate</span> <span class="token return-type class-name">Task</span> <span class="token function">TaskInvokeDelegate</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> target<span class="token punctuation">,</span> <span class="token keyword">params</span> <span class="token class-name"><span class="token keyword">object</span><span class="token punctuation">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> parameters<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">internal</span> <span class="token keyword">delegate</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">VoidInvokeDelegate</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> target<span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">object</span><span class="token punctuation">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> parameters<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x4E24;&#x4E2A; <code>void My()</code> &#x51FD;&#x6570;&#x4F1A;&#x88AB;&#x8868;&#x8FBE;&#x5F0F;&#x6811;&#x5C01;&#x88C5;&#x6210;  <code>void VoidInvokeDelegate()</code> &#x59D4;&#x6258;&#xFF0C;&#x800C;&#x4E24;&#x4E2A; <code>Task My()</code> &#x4F1A;&#x88AB;&#x5C01;&#x88C5;&#x4E3A; <code>Task TaskInvokeDelegate</code> &#x59D4;&#x6258;&#xFF0C;&#x867D;&#x7136;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x59D4;&#x6258;&#xFF0C;&#x4F46;&#x662F;&#x4E3A;&#x4E86;&#x7EDF;&#x4E00;&#x683C;&#x5F0F;&#xFF0C;&#x6700;&#x540E;&#x8FD8;&#x9700;&#x8981;&#x5C06; VoidInvokeDelegate &#x59D4;&#x6258;&#x8F6C;&#x6362;&#x4E3A; TaskInvokeDelegate&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x6700;&#x540E;&#x6846;&#x67B6;&#x53EA;&#x9700;&#x8981;&#x7EDF;&#x4E00;&#x5C01;&#x88C5;&#x6309;&#x7167; <code>Task TaskInvokeDelegate()</code> &#x59D4;&#x6258;&#x6267;&#x884C;&#x5F02;&#x6B65;&#x65B9;&#x6CD5;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>InvokeBuilder.cs</code> &#x7C7B;&#x578B;&#xFF0C;&#x5C01;&#x88C5;&#x65B9;&#x6CD5;&#x901A;&#x8FC7;&#x8868;&#x8FBE;&#x5F0F;&#x6811;&#x5C06;&#x56DB;&#x79CD;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x4EE5;&#x53CA; VoidInvokeDelegate &#x59D4;&#x6258;&#x8F6C;&#x6362;&#x4E3A; TaskInvokeDelegate &#x59D4;&#x6258;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CheckImageCodeEventHandler</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Check</span><span class="token punctuation">(</span><span class="token class-name">MyEvent</span> @<span class="token keyword">event</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x8868;&#x8FBE;&#x5F0F;&#x6811;&#x6784;&#x9020;&#x4E3A;&#x5982;&#x4E0B;&#x4F2A;&#x4EE3;&#x7801;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token class-name">VoidInvokeDelegate</span> invoke <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> target<span class="token punctuation">,</span><span class="token class-name"><span class="token keyword">object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">?</span></span> parameters<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+<span class="token punctuation">{</span>
+    <span class="token punctuation">(</span>CheckImageCodeEventHandler<span class="token punctuation">)</span>target<span class="token punctuation">.</span><span class="token function">Check</span><span class="token punctuation">(</span>parameters<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">TaskInvokeDelegate</span> taskInvoke <span class="token operator">=</span> Task <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> target<span class="token punctuation">,</span><span class="token class-name"><span class="token keyword">object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">?</span></span> parameters<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+<span class="token punctuation">{</span>
+    invoke<span class="token punctuation">.</span><span class="token function">Invoke</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span>paramters<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> Task<span class="token punctuation">.</span>CompletedTask<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>InvokeBuilder &#x5B8C;&#x6574;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">internal</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">InvokeBuilder</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// &#x6784;&#x9020;&#x59D4;&#x6258;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token return-type class-name">TaskInvokeDelegate</span> <span class="token function">Build</span><span class="token punctuation">(</span><span class="token class-name">MethodInfo</span> methodInfo<span class="token punctuation">,</span> <span class="token class-name">Type</span> targetType<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// &#x6B65;&#x9AA4;&#x4E00;&#xFF1A;&#x6784;&#x9020; (object target, params object?[] parameters) &#x53C2;&#x6570;</span>
+        <span class="token comment">// &#x6784;&#x9020;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> targetParameter <span class="token operator">=</span> Expression<span class="token punctuation">.</span><span class="token function">Parameter</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name"><span class="token keyword">object</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;target&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> parametersParameter <span class="token operator">=</span> Expression<span class="token punctuation">.</span><span class="token function">Parameter</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name"><span class="token keyword">object</span><span class="token punctuation">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;parameters&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// &#x6784;&#x5EFA;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x5217;&#x8868;</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> parameters <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">List<span class="token punctuation">&lt;</span>Expression<span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> paramInfos <span class="token operator">=</span> methodInfo<span class="token punctuation">.</span><span class="token function">GetParameters</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">var</span></span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> paramInfos<span class="token punctuation">.</span>Length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">var</span></span> paramInfo <span class="token operator">=</span> paramInfos<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">var</span></span> valueObj <span class="token operator">=</span> Expression<span class="token punctuation">.</span><span class="token function">ArrayIndex</span><span class="token punctuation">(</span>parametersParameter<span class="token punctuation">,</span> Expression<span class="token punctuation">.</span><span class="token function">Constant</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">var</span></span> valueCast <span class="token operator">=</span> Expression<span class="token punctuation">.</span><span class="token function">Convert</span><span class="token punctuation">(</span>valueObj<span class="token punctuation">,</span> paramInfo<span class="token punctuation">.</span>ParameterType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            parameters<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>valueCast<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// &#x6784;&#x9020;&#x51FD;&#x6570;&#x8C03;&#x7528;</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> instanceCast <span class="token operator">=</span> Expression<span class="token punctuation">.</span><span class="token function">Convert</span><span class="token punctuation">(</span>targetParameter<span class="token punctuation">,</span> targetType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> methodCall <span class="token operator">=</span> Expression<span class="token punctuation">.</span><span class="token function">Call</span><span class="token punctuation">(</span>instanceCast<span class="token punctuation">,</span> methodInfo<span class="token punctuation">,</span> parameters<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// &#x6B65;&#x9AA4;&#x4E8C;&#xFF1A;&#x8F6C;&#x6362;&#x4E3A; TaskInvokeDelegate &#x5F62;&#x5F0F;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>methodCall<span class="token punctuation">.</span>Type <span class="token operator">==</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name"><span class="token keyword">void</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">var</span></span> lambda <span class="token operator">=</span> Expression<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Lambda</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>VoidInvokeDelegate<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span>methodCall<span class="token punctuation">,</span> targetParameter<span class="token punctuation">,</span> parametersParameter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">var</span></span> voidExecutor <span class="token operator">=</span> lambda<span class="token punctuation">.</span><span class="token function">Compile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token keyword">delegate</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> target<span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">object</span><span class="token punctuation">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> parameters<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">voidExecutor</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> parameters<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> Task<span class="token punctuation">.</span>CompletedTask<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>methodCall<span class="token punctuation">.</span>Type <span class="token operator">==</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">Task</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">var</span></span> castMethodCall <span class="token operator">=</span> Expression<span class="token punctuation">.</span><span class="token function">Convert</span><span class="token punctuation">(</span>methodCall<span class="token punctuation">,</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">Task</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">var</span></span> lambda <span class="token operator">=</span> Expression<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Lambda</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>TaskInvokeDelegate<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span>castMethodCall<span class="token punctuation">,</span> targetParameter<span class="token punctuation">,</span> parametersParameter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> lambda<span class="token punctuation">.</span><span class="token function">Compile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">NotSupportedException</span><span class="token punctuation">(</span><span class="token interpolation-string"><span class="token string">$&quot;The return type of the [</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">methodInfo<span class="token punctuation">.</span>Name</span><span class="token punctuation">}</span></span><span class="token string">] method must be Task or void&quot;</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="&#x5C01;&#x88C5;&#x8C03;&#x7528;&#x94FE;"><a name="&#x5C01;&#x88C5;&#x8C03;&#x7528;&#x94FE;" class="anchor-navigation-ex-anchor" href="#&#x5C01;&#x88C5;&#x8C03;&#x7528;&#x94FE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C01;&#x88C5;&#x8C03;&#x7528;&#x94FE;</h4>
+<p>&#x5C06;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x5C01;&#x88C5;&#x6210;&#x7EDF;&#x4E00;&#x7684;&#x59D4;&#x6258;&#x7ED3;&#x6784;&#x540E;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x662F;&#x5C06;&#x8FD9;&#x4E9B;&#x6267;&#x884C;&#x5668;&#x548C;&#x53D6;&#x6D88;&#x6267;&#x884C;&#x5668;&#x7684;&#x59D4;&#x6258;&#x4F7F;&#x7528;&#x8868;&#x8FBE;&#x5F0F;&#x6811;&#x6784;&#x9020;&#x6210;&#x8C03;&#x7528;&#x94FE;&#xFF0C;&#x6309;&#x7167; Order &#x7684;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code>MyEvent =&gt; InsertDb =&gt; InitUser =&gt; SendEmail
+CancelInsertDb &lt;= CancelInitUser &lt;= CancelSendEmail
+</code></pre><p>&#x5B9A;&#x4E49;&#x4E24;&#x4E2A;&#x7528;&#x4E8E;&#x6267;&#x884C;&#x94FE;&#x59D4;&#x6258;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">// &#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x59D4;&#x6258;&#xFF0C;&#x7528;&#x4E8E;&#x6784;&#x5EFA;&#x6267;&#x884C;&#x94FE;</span>
+<span class="token keyword">public</span> <span class="token keyword">delegate</span> <span class="token return-type class-name">Task</span> <span class="token function">EventHandlerDelegate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// &#x5E26;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x7684;&#x4E8B;&#x4EF6;&#x59D4;&#x6258;&#xFF0C;&#x7528;&#x4E8E;&#x6784;&#x5EFA;&#x6267;&#x884C;&#x94FE;</span>
+<span class="token keyword">internal</span> <span class="token keyword">delegate</span> <span class="token return-type class-name">Task</span> <span class="token function">ServiceEventHandlerDelegate</span><span class="token punctuation">(</span><span class="token class-name">IServiceProvider</span> provider<span class="token punctuation">,</span> <span class="token keyword">params</span> <span class="token class-name"><span class="token keyword">object</span><span class="token punctuation">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> parameters<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>ServiceEventHandlerDelegate &#x7528;&#x4E8E;&#x6784;&#x9020;&#x8C03;&#x7528;&#x94FE;&#x548C;&#x64A4;&#x9500;&#x94FE;&#xFF0C;&#x628A;&#x6267;&#x884C;&#x4E8B;&#x4EF6;&#x7684;&#x6267;&#x884C;&#x5668;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x548C;&#x64A4;&#x9500;&#x987A;&#x5E8F;&#x5305;&#x88C5;&#x8D77;&#x6765;&#x3002;&#x4F2A;&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token class-name">ServiceEventHandlerDelegate</span> next <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>provider<span class="token punctuation">,</span> @<span class="token keyword">params</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">try</span>
+    <span class="token punctuation">{</span>
+        A <span class="token operator">=&gt;</span> B <span class="token operator">=&gt;</span> C
+    <span class="token punctuation">}</span>
+    <span class="token keyword">catch</span>
+    <span class="token punctuation">{</span>
+        C <span class="token operator">=&gt;</span> B <span class="token operator">=&gt;</span> A
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x62E6;&#x622A;&#x4E8B;&#x4EF6;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x4E2D;&#x95F4;&#x4EF6;&#x62E6;&#x622A;&#x5668;&#x63A5;&#x53E3;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">// &#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x5373;&#x6267;&#x884C;&#x4E8B;&#x4EF6;&#x65F6;&#x7684;&#x62E6;&#x622A;&#x5668;</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IEventMiddleware<span class="token punctuation">&lt;</span><span class="token keyword">in</span> TEvent<span class="token punctuation">&gt;</span></span>
+<span class="token keyword">where</span> <span class="token class-name">TEvent</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IEvent</span></span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// @event: &#x4E8B;&#x4EF6;</span>
+    <span class="token comment">// next: &#x4E0B;&#x4E00;&#x4E2A;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;</span>
+    <span class="token return-type class-name">Task</span> <span class="token function">HandleAsync</span><span class="token punctuation">(</span><span class="token class-name">TEvent</span> @<span class="token keyword">event</span><span class="token punctuation">,</span> <span class="token class-name">EventHandlerDelegate</span> next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4F7F;&#x7528; ServiceEventHandlerDelegate &#x5305;&#x88C5;&#x597D;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x6267;&#x884C; ServiceEventHandlerDelegate &#x59D4;&#x6258;&#x5373;&#x53EF;&#x8C03;&#x7528;&#x6574;&#x4E2A;&#x94FE;&#x8DEF;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x800C; EventHandlerDelegate &#x7684;&#x4F5C;&#x7528;&#x662F;&#x5305;&#x88C5; ServiceEventHandlerDelegate &#xFF0C;&#x5982;&#x679C;&#x5F00;&#x53D1;&#x8005;&#x8981;&#x6C42;&#x4F7F;&#x7528;&#x4E2D;&#x95F4;&#x4EF6;&#x62E6;&#x622A;&#x4E8B;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x518D;&#x5305;&#x88C5;&#x4E00;&#x5C42;&#x4F20;&#x9012;&#x7ED9;&#x4E2D;&#x95F4;&#x4EF6;&#x62E6;&#x622A;&#x5668;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">if</span> <span class="token punctuation">(</span>Middleware <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name"><span class="token keyword">var</span></span> mid <span class="token operator">=</span> ioc<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetRequiredService</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>IEventMiddleware<span class="token punctuation">&lt;</span>TEvent<span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">EventHandlerDelegate</span> next <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span>ioc<span class="token punctuation">,</span> @<span class="token keyword">event</span><span class="token punctuation">,</span> cancellationToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">await</span> mid<span class="token punctuation">.</span><span class="token function">HandleAsync</span><span class="token punctuation">(</span>@<span class="token keyword">event</span><span class="token punctuation">,</span> next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">else</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span>ioc<span class="token punctuation">,</span> @<span class="token keyword">event</span><span class="token punctuation">,</span> cancellationToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="&#x4E8B;&#x4EF6;&#x626B;&#x63CF;&#x548C;&#x6CE8;&#x518C;"><a name="&#x4E8B;&#x4EF6;&#x626B;&#x63CF;&#x548C;&#x6CE8;&#x518C;" class="anchor-navigation-ex-anchor" href="#&#x4E8B;&#x4EF6;&#x626B;&#x63CF;&#x548C;&#x6CE8;&#x518C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8B;&#x4EF6;&#x626B;&#x63CF;&#x548C;&#x6CE8;&#x518C;</h4>
+<p>&#x63A5;&#x7740;&#xFF0C;&#x6211;&#x4EEC;&#x5F00;&#x59CB;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#xFF0C;&#x6765;&#x5904;&#x7406;&#x626B;&#x63CF;&#x548C;&#x6CE8;&#x518C;&#x4FDD;&#x5B58;&#x4E8B;&#x4EF6;&#x3002;&#x626B;&#x63CF;&#x6BCF;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x5B58;&#x50A8;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x5E76;&#x6309;&#x7167; Order &#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x540C;&#x65F6;&#xFF0C;&#x7ED1;&#x5B9A; Cancel &#x64A4;&#x9500;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x7ED1;&#x5B9A;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x5668;&#x4FE1;&#x606F;&#x548C;&#x64A4;&#x9500;&#x5668;&#xFF0C;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x6A21;&#x578B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">// &#x7528;&#x6765;&#x8BB0;&#x5F55;&#x4E00;&#x4E2A; Handler </span>
+<span class="token keyword">internal</span> <span class="token keyword">class</span> <span class="token class-name">EventInfo</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// &#x6267;&#x884C;&#x5668;&#x6240;&#x5728;&#x7684;&#x7C7B;</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name">Type</span> DeclaringType <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token comment">// &#x6267;&#x884C;&#x5E8F;&#x53F7;</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> Order <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token comment">// &#x4E8B;&#x4EF6;</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name">Type</span> EventType <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token comment">// &#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name">MethodInfo</span> MethodInfo <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token comment">// &#x59D4;&#x6258;&#x5C01;&#x88C5;&#x7684;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name">TaskInvokeDelegate</span> TaskInvoke <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token comment">// &#x64A4;&#x9500;&#x65F6;&#x6267;&#x884C;</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">bool</span></span> IsCancel <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token comment">// &#x64A4;&#x9500;&#x6267;&#x884C;&#x5668;&#x5BF9;&#x5E94;&#x7684;&#x4FE1;&#x606F;</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name">EventInfo<span class="token punctuation">?</span></span> CancelInfo <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> <span class="token function">GetHashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> MethodInfo<span class="token punctuation">.</span><span class="token function">GetHashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">bool</span></span> <span class="token function">Equals</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span><span class="token punctuation">?</span></span> obj<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token class-name">EventInfo</span> info<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">GetHashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> info<span class="token punctuation">.</span><span class="token function">GetHashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x662F;&#x5B9E;&#x73B0;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#xFF0C;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x63A5;&#x53E3;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">// &#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x670D;&#x52A1;</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IEventBus</span>
+<span class="token punctuation">{</span>
+    <span class="token return-type class-name">Task</span> <span class="token generic-method"><span class="token function">PublishAsync</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>TEvent<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token class-name">TEvent</span> @<span class="token keyword">event</span><span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken <span class="token operator">=</span> <span class="token keyword">default</span><span class="token punctuation">)</span>
+    <span class="token keyword">where</span> <span class="token class-name">TEvent</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IEvent</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#xFF0C;&#x7B14;&#x8005;&#x5C06; EventBus &#x7C7B;&#x578B;&#x62C6;&#x5F00;&#x4E24;&#x90E8;&#x5206;&#x6765;&#x5199;&#xFF0C;&#x4F7F;&#x7528;&#x5206;&#x90E8;&#x7C7B;&#x62C6;&#x5206;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x7684; EventBus &#x4E2D;&#x5305;&#x542B;&#x4E86;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x548C;&#x5B57;&#x6BB5;&#xFF0C;&#x7F13;&#x5B58;&#x6267;&#x884C;&#x5668;&#x4FE1;&#x606F;&#x4EE5;&#x53CA;&#x5B58;&#x50A8;&#x59D4;&#x6258;&#x8C03;&#x7528;&#x94FE;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">partial</span> <span class="token keyword">class</span> <span class="token class-name">EventBus</span>
+<span class="token punctuation">{</span>
+    <span class="token preprocessor property">#<span class="token directive keyword">region</span> static</span>
+
+    <span class="token comment">// &#x62E6;&#x622A;&#x5668;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">Type<span class="token punctuation">?</span></span> Middleware<span class="token punctuation">;</span>
+    <span class="token comment">// &#x7F13;&#x5B58;&#x6240;&#x6709;&#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x5668;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">readonly</span> <span class="token class-name">Dictionary<span class="token punctuation">&lt;</span>Type<span class="token punctuation">,</span> HashSet<span class="token punctuation">&lt;</span>EventInfo<span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> EventCache <span class="token operator">=</span> <span class="token keyword">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// &#x8C03;&#x7528;&#x94FE;&#x7F13;&#x5B58;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">readonly</span> <span class="token class-name">Dictionary<span class="token punctuation">&lt;</span>Type<span class="token punctuation">,</span> ServiceEventHandlerDelegate<span class="token punctuation">&gt;</span></span> HandlerDelegateCache <span class="token operator">=</span> <span class="token keyword">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// &#x8BBE;&#x7F6E;&#x62E6;&#x622A;&#x5668;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">SetMiddleware</span><span class="token punctuation">(</span><span class="token class-name">Type</span> type<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Middleware <span class="token operator">=</span> type<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// &#x7ED9;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x6DFB;&#x52A0;&#x6267;&#x884C;&#x5668;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">AddEventHandler</span><span class="token punctuation">(</span>
+        <span class="token class-name">Type</span> declaringType<span class="token punctuation">,</span> <span class="token comment">// &#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x6240;&#x5728;&#x7684;&#x7C7B;</span>
+        <span class="token class-name"><span class="token keyword">int</span></span> order<span class="token punctuation">,</span>
+        <span class="token class-name">Type</span> eventType<span class="token punctuation">,</span>     <span class="token comment">// &#x7ED1;&#x5B9A;&#x4E86;&#x54EA;&#x4E2A;&#x4E8B;&#x4EF6; </span>
+        <span class="token class-name">MethodInfo</span> method<span class="token punctuation">)</span>  <span class="token comment">// &#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>EventCache<span class="token punctuation">.</span><span class="token function">TryGetValue</span><span class="token punctuation">(</span>eventType<span class="token punctuation">,</span> <span class="token keyword">out</span> <span class="token class-name"><span class="token keyword">var</span></span> events<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            events <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">HashSet<span class="token punctuation">&lt;</span>EventInfo<span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            EventCache<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span> <span class="token operator">=</span> events<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> info <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">EventInfo</span>
+        <span class="token punctuation">{</span>
+            DeclaringType <span class="token operator">=</span> declaringType<span class="token punctuation">,</span>
+            EventType <span class="token operator">=</span> eventType<span class="token punctuation">,</span>
+            MethodInfo <span class="token operator">=</span> method<span class="token punctuation">,</span>
+            IsCancel <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            Order <span class="token operator">=</span> order<span class="token punctuation">,</span>
+            <span class="token comment">// &#x5C01;&#x88C5;&#x65B9;&#x6CD5;&#x4E3A;&#x7EDF;&#x4E00;&#x7684;&#x683C;&#x5F0F;</span>
+            TaskInvoke <span class="token operator">=</span> InvokeBuilder<span class="token punctuation">.</span><span class="token function">Build</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> declaringType<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        events<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>info<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x7ED1;&#x5B9A;&#x5BF9;&#x5E94;&#x7684;&#x64A4;&#x9500;&#x5668;</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> cancelInfo <span class="token operator">=</span> events<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span>x <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>EventType <span class="token operator">==</span> eventType <span class="token operator">&amp;&amp;</span> x<span class="token punctuation">.</span>Order <span class="token operator">==</span> order <span class="token operator">&amp;&amp;</span> x<span class="token punctuation">.</span>IsCancel <span class="token operator">==</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>cancelInfo <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> info<span class="token punctuation">.</span>CancelInfo <span class="token operator">=</span> cancelInfo<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// &#x6DFB;&#x52A0;&#x64A4;&#x9500;&#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x5668;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">AddCancelEventHandler</span><span class="token punctuation">(</span><span class="token class-name">Type</span> declaringType<span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">int</span></span> order<span class="token punctuation">,</span> <span class="token class-name">Type</span> eventType<span class="token punctuation">,</span> <span class="token class-name">MethodInfo</span> method<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>EventCache<span class="token punctuation">.</span><span class="token function">TryGetValue</span><span class="token punctuation">(</span>eventType<span class="token punctuation">,</span> <span class="token keyword">out</span> <span class="token class-name"><span class="token keyword">var</span></span> events<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            events <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">HashSet<span class="token punctuation">&lt;</span>EventInfo<span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            EventCache<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span> <span class="token operator">=</span> events<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> cancelInfo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">EventInfo</span>
+        <span class="token punctuation">{</span>
+            DeclaringType <span class="token operator">=</span> declaringType<span class="token punctuation">,</span>
+            EventType <span class="token operator">=</span> eventType<span class="token punctuation">,</span>
+            MethodInfo <span class="token operator">=</span> method<span class="token punctuation">,</span>
+            IsCancel <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            Order <span class="token operator">=</span> order<span class="token punctuation">,</span>
+            TaskInvoke <span class="token operator">=</span> InvokeBuilder<span class="token punctuation">.</span><span class="token function">Build</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> declaringType<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        events<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>cancelInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x8BE5;&#x64A4;&#x9500;&#x5668;&#x7ED1;&#x5B9A;&#x5BF9;&#x5E94;&#x7684;&#x6267;&#x884C;&#x5668;</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> info <span class="token operator">=</span> events<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span>x <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>EventType <span class="token operator">==</span> eventType <span class="token operator">&amp;&amp;</span> x<span class="token punctuation">.</span>Order <span class="token operator">==</span> order <span class="token operator">&amp;&amp;</span> x<span class="token punctuation">.</span>IsCancel <span class="token operator">==</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>info <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> info<span class="token punctuation">.</span>CancelInfo <span class="token operator">=</span> cancelInfo<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token preprocessor property">#<span class="token directive keyword">endregion</span></span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x9762;&#x7684;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C06;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#x5B58;&#x50A8;&#x5230;&#x7F13;&#x5B58;&#x4E2D;&#x3002;</p>
+<p>&#x63A5;&#x7740;&#xFF0C;&#x4E3A;&#x4E86;&#x6784;&#x5EFA;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x94FE;&#xFF0C;&#x5DF2;&#x7ECF;&#x6267;&#x884C;&#x5931;&#x8D25;&#x56DE;&#x64A4;&#x8FC7;&#x7A0B;&#xFF0C;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x7684;&#x6784;&#x5EFA;&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x6240;&#x6709;&#x6B65;&#x9AA4;&#x5C01;&#x88C5;&#x5230; ServiceEventHandlerDelegate &#x4E2D;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">// &#x6784;&#x5EFA;&#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x94FE;</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token return-type class-name">ServiceEventHandlerDelegate</span> <span class="token generic-method"><span class="token function">BuildHandler</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>TEvent<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">where</span> <span class="token class-name">TEvent</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IEvent</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>HandlerDelegateCache<span class="token punctuation">.</span><span class="token function">TryGetValue</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">TEvent</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">out</span> <span class="token class-name"><span class="token keyword">var</span></span> handler<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> handler<span class="token punctuation">;</span>
+
+    <span class="token class-name">ServiceEventHandlerDelegate</span> next <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>provider<span class="token punctuation">,</span> @<span class="token keyword">params</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> eventData <span class="token operator">=</span> @<span class="token keyword">params</span><span class="token punctuation">.</span><span class="token generic-method"><span class="token function">OfType</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>Event<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> cancel <span class="token operator">=</span> @<span class="token keyword">params</span><span class="token punctuation">.</span><span class="token generic-method"><span class="token function">OfType</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>CancellationToken<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name"><span class="token keyword">var</span></span> logger <span class="token operator">=</span> provider<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetRequiredService</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>ILogger<span class="token punctuation">&lt;</span>EventBus<span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        logger<span class="token punctuation">.</span><span class="token function">LogDebug</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x4E8B;&#x4EF6;: {0},{1}&quot;</span><span class="token punctuation">,</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">TEvent</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Name<span class="token punctuation">,</span> @<span class="token keyword">params</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>EventCache<span class="token punctuation">.</span><span class="token function">TryGetValue</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">TEvent</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">out</span> <span class="token class-name"><span class="token keyword">var</span></span> eventInfos<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> infos <span class="token operator">=</span> eventInfos<span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span>x <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>IsCancel <span class="token operator">==</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">OrderBy</span><span class="token punctuation">(</span>x <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>Order<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x5305;&#x88C5;&#x8C03;&#x7528;&#x94FE;&#x548C;&#x64A4;&#x9500;&#x94FE;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> infos<span class="token punctuation">.</span>Length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">var</span></span> info <span class="token operator">=</span> infos<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>cancel<span class="token punctuation">.</span>IsCancellationRequested<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                logger<span class="token punctuation">.</span><span class="token function">LogDebug</span><span class="token punctuation">(</span><span class="token string">&quot;&#x4E8B;&#x4EF6;&#x5DF2;&#x88AB;&#x53D6;&#x6D88;&#x6267;&#x884C;: {0},&#x4F4D;&#x7F6E;&#xFF1A;{1}&quot;</span><span class="token punctuation">,</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">TEvent</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Name<span class="token punctuation">,</span> info<span class="token punctuation">.</span>MethodInfo<span class="token punctuation">.</span>Name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            logger<span class="token punctuation">.</span><span class="token function">LogDebug</span><span class="token punctuation">(</span><span class="token string">&quot;&#x4E8B;&#x4EF6;: {0},=&gt; {1}&quot;</span><span class="token punctuation">,</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">TEvent</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Name<span class="token punctuation">,</span> info<span class="token punctuation">.</span>MethodInfo<span class="token punctuation">.</span>Name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// &#x6784;&#x5EFA;&#x6267;&#x884C;&#x94FE;</span>
+            <span class="token class-name"><span class="token keyword">var</span></span> currentService <span class="token operator">=</span> provider<span class="token punctuation">.</span><span class="token function">GetRequiredService</span><span class="token punctuation">(</span>info<span class="token punctuation">.</span>DeclaringType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">try</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">await</span> info<span class="token punctuation">.</span><span class="token function">TaskInvoke</span><span class="token punctuation">(</span>currentService<span class="token punctuation">,</span> @<span class="token keyword">params</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// &#x6267;&#x884C;&#x5931;&#x8D25;&#xFF0C;&#x5F00;&#x59CB;&#x56DE;&#x9000;</span>
+            <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> ex<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                logger<span class="token punctuation">.</span><span class="token function">LogError</span><span class="token punctuation">(</span>ex<span class="token punctuation">,</span> <span class="token string">&quot;&#x6267;&#x884C;&#x4E8B;&#x4EF6;&#x5931;&#x8D25;: {0},&#x6267;&#x884C;&#x5668;:{1},{2}&quot;</span><span class="token punctuation">,</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">TEvent</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Name<span class="token punctuation">,</span> info<span class="token punctuation">.</span>MethodInfo<span class="token punctuation">.</span>Name<span class="token punctuation">,</span> @<span class="token keyword">params</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> j <span class="token operator">=</span> i<span class="token punctuation">;</span> j <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token class-name"><span class="token keyword">var</span></span> backInfo <span class="token operator">=</span> infos<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>backInfo<span class="token punctuation">.</span>CancelInfo <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token keyword">await</span> backInfo<span class="token punctuation">.</span>CancelInfo<span class="token punctuation">.</span><span class="token function">TaskInvoke</span><span class="token punctuation">(</span>currentService<span class="token punctuation">,</span> @<span class="token keyword">params</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">return</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token comment">// &#x5B58;&#x5230;&#x7F13;&#x5B58;</span>
+    HandlerDelegateCache<span class="token punctuation">[</span><span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">TEvent</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> next<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x63A5;&#x7740;&#xFF0C;&#x7F16;&#x5199; EventBus &#x7684;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x73B0; IEventBus &#x53D1;&#x5E03;&#x4E8B;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">// &#x4E8B;&#x4EF6;&#x603B;&#x7EBF;</span>
+<span class="token keyword">public</span> <span class="token keyword">partial</span> <span class="token keyword">class</span> <span class="token class-name">EventBus</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IEventBus</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">readonly</span> <span class="token class-name">IServiceProvider</span> _provider<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">EventBus</span><span class="token punctuation">(</span><span class="token class-name">IServiceProvider</span> serviceProvider<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        _provider <span class="token operator">=</span> serviceProvider<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// &#x53D1;&#x5E03;&#x4E8B;&#x4EF6;</span>
+    <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token return-type class-name">Task</span> <span class="token generic-method"><span class="token function">PublishAsync</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>TEvent<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token class-name">TEvent</span> @<span class="token keyword">event</span><span class="token punctuation">,</span> <span class="token class-name">CancellationToken</span> cancellationToken <span class="token operator">=</span> <span class="token keyword">default</span><span class="token punctuation">)</span>
+        <span class="token keyword">where</span> <span class="token class-name">TEvent</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IEvent</span></span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> handler <span class="token operator">=</span> <span class="token generic-method"><span class="token function">BuildHandler</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>TEvent<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Middleware <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">var</span></span> mid <span class="token operator">=</span> _provider<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetRequiredService</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>IEventMiddleware<span class="token punctuation">&lt;</span>TEvent<span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">EventHandlerDelegate</span> next <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">await</span> <span class="token function">handler</span><span class="token punctuation">(</span>_provider<span class="token punctuation">,</span> @<span class="token keyword">event</span><span class="token punctuation">,</span> cancellationToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            <span class="token keyword">await</span> mid<span class="token punctuation">.</span><span class="token function">HandleAsync</span><span class="token punctuation">(</span>@<span class="token keyword">event</span><span class="token punctuation">,</span> next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">await</span> <span class="token function">handler</span><span class="token punctuation">(</span>_provider<span class="token punctuation">,</span> @<span class="token keyword">event</span><span class="token punctuation">,</span> cancellationToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x6700;&#x540E;&#x4E3A;&#x4E86;&#x5728;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x65F6;&#x626B;&#x63CF;&#x51FA;&#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x5668;&#xFF0C;&#x6CE8;&#x518C;&#x5230;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x7684;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">EventBusExtensions</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// &#x6DFB;&#x52A0;&#x4E8B;&#x4EF6;&#x603B;&#x7EBF;&#x6269;&#x5C55;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">AddEventBus</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token class-name">IServiceCollection</span> services<span class="token punctuation">,</span> <span class="token class-name">Type<span class="token punctuation">?</span></span> middleware <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddScoped</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>IEventBus<span class="token punctuation">,</span> EventBus<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>middleware <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            EventBus<span class="token punctuation">.</span><span class="token function">SetMiddleware</span><span class="token punctuation">(</span>middleware<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            services<span class="token punctuation">.</span><span class="token function">TryAddEnumerable</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceDescriptor</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">IEventMiddleware<span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> middleware<span class="token punctuation">,</span> <span class="token named-parameter punctuation">lifetime</span><span class="token punctuation">:</span> ServiceLifetime<span class="token punctuation">.</span>Transient<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token class-name"><span class="token keyword">var</span></span> assemblies <span class="token operator">=</span> AppDomain<span class="token punctuation">.</span>CurrentDomain<span class="token punctuation">.</span><span class="token function">GetAssemblies</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">var</span></span> assembly <span class="token keyword">in</span> assemblies<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">var</span></span> type <span class="token keyword">in</span> assembly<span class="token punctuation">.</span><span class="token function">GetTypes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>type<span class="token punctuation">.</span>CustomAttributes<span class="token punctuation">.</span><span class="token function">Any</span><span class="token punctuation">(</span>x <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>AttributeType <span class="token operator">==</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">EventAttribute</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token function">GetEventHandler</span><span class="token punctuation">(</span>services<span class="token punctuation">,</span> type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// &#x626B;&#x63CF;&#x7C7B;&#x4E2D;&#x7684;&#x6267;&#x884C;&#x5668;</span>
+    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">MethodImpl</span><span class="token attribute-arguments"><span class="token punctuation">(</span>MethodImplOptions<span class="token punctuation">.</span>AggressiveInlining<span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">GetEventHandler</span><span class="token punctuation">(</span><span class="token class-name">IServiceCollection</span> services<span class="token punctuation">,</span> <span class="token class-name">Type</span> type<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        services<span class="token punctuation">.</span><span class="token function">AddScoped</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name"><span class="token keyword">var</span></span> methods <span class="token operator">=</span> type<span class="token punctuation">.</span><span class="token function">GetMethods</span><span class="token punctuation">(</span>BindingFlags<span class="token punctuation">.</span>Public <span class="token operator">|</span> BindingFlags<span class="token punctuation">.</span>Instance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">var</span></span> method <span class="token keyword">in</span> methods<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">var</span></span> attr <span class="token operator">=</span> method<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetCustomAttribute</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>EventHandlerAttribute<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>attr <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+            <span class="token class-name"><span class="token keyword">var</span></span> parameters <span class="token operator">=</span> method<span class="token punctuation">.</span><span class="token function">GetParameters</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>parameters<span class="token punctuation">.</span>Length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Exception</span><span class="token punctuation">(</span><span class="token interpolation-string"><span class="token string">$&quot;</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">method<span class="token punctuation">.</span>Name</span><span class="token punctuation">}</span></span><span class="token string"> &#x7684;&#x5B9A;&#x4E49;&#x4E0D;&#x6B63;&#x786E;&#xFF0C;&#x81F3;&#x5C11;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&quot;</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">var</span></span> eventType <span class="token operator">=</span> parameters<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>ParameterType<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>eventType<span class="token punctuation">.</span><span class="token function">IsSubclassOf</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">Event</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">||</span> eventType<span class="token punctuation">.</span><span class="token function">GetInterface</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">IEvent</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Name<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Exception</span><span class="token punctuation">(</span><span class="token interpolation-string"><span class="token string">$&quot;</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">method<span class="token punctuation">.</span>Name</span><span class="token punctuation">}</span></span><span class="token string"> &#x7684;&#x5B9A;&#x4E49;&#x4E0D;&#x6B63;&#x786E;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x4E3A;&#x4E8B;&#x4EF6;&quot;</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>attr<span class="token punctuation">.</span>IsCancel<span class="token punctuation">)</span> EventBus<span class="token punctuation">.</span><span class="token function">AddEventHandler</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> attr<span class="token punctuation">.</span>Order<span class="token punctuation">,</span> eventType<span class="token punctuation">,</span> method<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> EventBus<span class="token punctuation">.</span><span class="token function">AddCancelEventHandler</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> attr<span class="token punctuation">.</span>Order<span class="token punctuation">,</span> eventType<span class="token punctuation">,</span> method<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x4E8B;&#x4EF6;"><a name="&#x4F7F;&#x7528;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x4E8B;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x4E8B;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x4E8B;&#x4EF6;</h3>
+<p>&#x672C;&#x8282;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x53C2;&#x8003; Demo7.Tran &#x9879;&#x76EE;&#xFF0C;&#x8BE5;&#x9879;&#x76EE;&#x4F7F;&#x7528; EFCore &#x5C06;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5230; Sqlite &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyContext</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">DbContext</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name">DbSet<span class="token punctuation">&lt;</span>AccountEntity<span class="token punctuation">&gt;</span></span> Account <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">MyContext</span><span class="token punctuation">(</span><span class="token class-name">DbContextOptions<span class="token punctuation">&lt;</span>MyContext<span class="token punctuation">&gt;</span></span> dbContext<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">base</span><span class="token punctuation">(</span>dbContext<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Database<span class="token punctuation">.</span><span class="token function">EnsureCreated</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnConfiguring</span><span class="token punctuation">(</span><span class="token class-name">DbContextOptionsBuilder</span> optionsBuilder<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        optionsBuilder<span class="token punctuation">.</span><span class="token function">UseSqlite</span><span class="token punctuation">(</span>
+            <span class="token string">@&quot;filename=my.db&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnModelCreating</span><span class="token punctuation">(</span><span class="token class-name">ModelBuilder</span> modelBuilder<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        modelBuilder<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Entity</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>AccountEntity<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">Property</span><span class="token punctuation">(</span>b <span class="token operator">=&gt;</span> b<span class="token punctuation">.</span>Id<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">ValueGeneratedOnAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">PrimaryKey</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token keyword">nameof</span><span class="token punctuation">(</span>Id<span class="token punctuation">)</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Index</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token keyword">nameof</span><span class="token punctuation">(</span>EMail<span class="token punctuation">)</span><span class="token punctuation">,</span> IsUnique <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AccountEntity</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> Id <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Name <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> EMail <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">bool</span></span> VerifyEMail <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x7531;&#x4E8E;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x4F1A;&#x6709;&#x591A;&#x4E2A;&#x6267;&#x884C;&#x5668;&#x65B9;&#x6CD5;&#xFF0C;&#x867D;&#x7136;&#x4E8B;&#x4EF6;&#x6267;&#x884C;&#x5931;&#x8D25;&#x540E;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x56DE;&#x6EDA;&#xFF0C;&#x53EF;&#x662F;&#x5F53;&#x51C6;&#x5907;&#x56DE;&#x6EDA;&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x5D29;&#x6E83;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E00;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x4E8B;&#x4EF6;&#x4E2D;&#x95F4;&#x4EF6;&#x4E2D;&#x52A0;&#x5165;&#x6570;&#x636E;&#x5E93;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x5728;&#x4E2D;&#x95F4;&#x4EF6;&#x4E2D;&#x6253;&#x5F00;&#x548C;&#x56DE;&#x6EDA;&#x4E8B;&#x52A1;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TranMiddleware<span class="token punctuation">&lt;</span>TEvent<span class="token punctuation">&gt;</span></span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IEventMiddleware<span class="token punctuation">&lt;</span>TEvent<span class="token punctuation">&gt;</span></span></span> <span class="token keyword">where</span> <span class="token class-name">TEvent</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IEvent</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">readonly</span> <span class="token class-name">MyContext</span> _context<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">TranMiddleware</span><span class="token punctuation">(</span><span class="token class-name">MyContext</span> context<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        _context <span class="token operator">=</span> context<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token return-type class-name">Task</span> <span class="token function">HandleAsync</span><span class="token punctuation">(</span><span class="token class-name">TEvent</span> @<span class="token keyword">event</span><span class="token punctuation">,</span> <span class="token class-name">EventHandlerDelegate</span> next<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;----- Handling command {0} ({1})&quot;</span><span class="token punctuation">,</span> @<span class="token keyword">event</span><span class="token punctuation">.</span><span class="token function">GetType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Name<span class="token punctuation">,</span> @<span class="token keyword">event</span><span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">using</span> <span class="token class-name"><span class="token keyword">var</span></span> tran <span class="token operator">=</span> <span class="token keyword">await</span> _context<span class="token punctuation">.</span>Database<span class="token punctuation">.</span><span class="token function">BeginTransactionAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">await</span> tran<span class="token punctuation">.</span><span class="token function">CommitAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">await</span> tran<span class="token punctuation">.</span><span class="token function">RollbackAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">throw</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x7F16;&#x5199;&#x76F8;&#x5173;&#x4E8B;&#x4EF6;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x63D2;&#x5165;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Event</span></span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserRegisterEventHandler</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">readonly</span> <span class="token class-name">MyContext</span> _context<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">UserRegisterEventHandler</span><span class="token punctuation">(</span><span class="token class-name">MyContext</span> context<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        _context <span class="token operator">=</span> context<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">EventHandler</span><span class="token attribute-arguments"><span class="token punctuation">(</span>Order <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token keyword">async</span> <span class="token return-type class-name">Task</span> <span class="token function">InsertDb</span><span class="token punctuation">(</span><span class="token class-name">MyEvent</span> @<span class="token keyword">event</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> state <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Next</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>state <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">await</span> _context<span class="token punctuation">.</span>Account<span class="token punctuation">.</span><span class="token function">AddAsync</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token constructor-invocation class-name">AccountEntity</span>
+            <span class="token punctuation">{</span>
+                Name <span class="token operator">=</span> @<span class="token keyword">event</span><span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+                EMail <span class="token operator">=</span> @<span class="token keyword">event</span><span class="token punctuation">.</span>EMail<span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">await</span> _context<span class="token punctuation">.</span><span class="token function">SaveChangesAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">&quot;&#x221A; &#x7528;&#x6237;&#x4FE1;&#x606F;&#x5DF2;&#x6DFB;&#x52A0;&#x5230;&#x6570;&#x636E;&#x5E93;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Exception</span><span class="token punctuation">(</span><span class="token string">&quot;&#xD7; &#x5199;&#x5165;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x5230;&#x6570;&#x636E;&#x5E93;&#x5931;&#x8D25;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5728;&#x8FDB;&#x884C;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x65F6;&#xFF0C;&#x6CE8;&#x5165;&#x8BE5;&#x4E2D;&#x95F4;&#x4EF6;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">static</span> <span class="token keyword">async</span> <span class="token return-type class-name">Task</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name"><span class="token keyword">var</span></span> ioc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceCollection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ioc<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddDbContext</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>MyContext<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ioc<span class="token punctuation">.</span><span class="token function">AddLogging</span><span class="token punctuation">(</span>build <span class="token operator">=&gt;</span> build<span class="token punctuation">.</span><span class="token function">AddConsole</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ioc<span class="token punctuation">.</span><span class="token function">AddEventBus</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">TranMiddleware<span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token class-name"><span class="token keyword">var</span></span> services <span class="token operator">=</span> ioc<span class="token punctuation">.</span><span class="token function">BuildServiceProvider</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name"><span class="token keyword">var</span></span> eventBus <span class="token operator">=</span> services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetRequiredService</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>IEventBus<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">await</span> eventBus<span class="token punctuation">.</span><span class="token function">PublishAsync</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token constructor-invocation class-name">MyEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Name <span class="token operator">=</span> <span class="token string">&quot;&#x5DE5;&#x826F;&quot;</span><span class="token punctuation">,</span>
+        EMail <span class="token operator">=</span> <span class="token string">&quot;&#x5DE5;&#x826F;@maomi.com&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x75F4;&#x8005;&#x5DE5;&#x826F; 2024 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x6863;&#x6700;&#x540E;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A;
+2025-01-02 08:35:32
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="7.http.html" class="navigation navigation-prev " aria-label="Previous page: 7.http 应用开发">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="9.dt.html" class="navigation navigation-next " aria-label="Next page: 9.动态代码">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"8.事件总线框架的设计","level":"11.1","depth":1,"next":{"title":"9.动态代码","level":"12.1","depth":1,"path":"9.dt.md","ref":"9.dt.md","articles":[]},"previous":{"title":"7.http 应用开发","level":"10.1","depth":1,"path":"7.http.md","ref":"7.http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","anchor-navigation-ex","mermaid-gb3","insert-logo","chapter-fold","advanced-emoji","github","splitter","alerts","popup","prism","hide-element","head-append","-highlight","-livereload","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 痴者工良 2024","modify_label":"文档最后更新时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"lang":{"flow":"typescript","shell":"bash"},"ignore":["mermaid","eval-js"],"css":["prismjs/themes/prism.css"],"js":["prismjs/prism.js","prismjs/components.js","prismjs/components/prism-csharp.min.js","prismjs/components/prism-go.min.js","prismjs/components/prism-yaml.min.js","prismjs/components/prism-bash.min.js","prismjs/components/prism-shell-session.min.js"]},"github":{"url":"https://github.com/whuanle/maomi_doc"},"splitter":{},"head-append":{"code":["<SCRIPTTAG>","var _hmt = _hmt || [];","(function() {","})();","</SCRIPTTAG>"]},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":true,"mode":"float","showGoTop":false,"printLog":false,"multipleH1":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"alerts":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 50px; min-height: 50px","url":"/images/logo.jpg"}},"theme":"default","author":"痴者工良","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Maomi 开发框架文档- 痴者工良","language":"zh-hans","links":{"sidebar":{"痴者工良的博客":"https://www.whuanle.cn","粤ICP备18051778号":"https://beian.miit.gov.cn/"}},"gitbook":"*","description":"介绍 Maomi 框架如何使用、如何设计，作者 痴者工良"},"file":{"path":"8.event.md","mtime":"2025-01-02T00:35:32.442Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-06T00:56:59.737Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

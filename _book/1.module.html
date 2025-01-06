@@ -1,0 +1,922 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.模块化和自动服务注册 · Maomi 开发框架文档- 痴者工良</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="痴者工良">
+        
+        
+    
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2.design_module.html" />
+    
+    
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+})();
+</script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.whuanle.cn" target="_blank" class="custom-link">痴者工良的博客</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://beian.miit.gov.cn/" target="_blank" class="custom-link">粤ICP备18051778号</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    使用篇
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    模块化和自动服务注册
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    多语言
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    swagger
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    设计篇
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="1.module.html">
+            
+                <a href="1.module.html">
+            
+                    
+                    1.模块化和自动服务注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="2.design_module.html">
+            
+                <a href="2.design_module.html">
+            
+                    
+                    2.模块化和自动服务注册的设计和实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="3.0.gz_log.html">
+            
+                <a href="3.0.gz_log.html">
+            
+                    
+                    3.故障诊断和日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="3.1.design_log.html">
+            
+                <a href="3.1.design_log.html">
+            
+                    
+                    3.1.自定义开发日志框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="3.2.serilog.html">
+            
+                <a href="3.2.serilog.html">
+            
+                    
+                    3.2. .NET 日志使用技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="3.3.diagostics.html">
+            
+                <a href="3.3.diagostics.html">
+            
+                    
+                    3.3.开发 .NET 诊断工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="4.pz.html">
+            
+                <a href="4.pz.html">
+            
+                    
+                    4.配置和选项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="5.xlh.html">
+            
+                <a href="5.xlh.html">
+            
+                    
+                    5.NET 中的序列化和反序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="6.i18n.html">
+            
+                <a href="6.i18n.html">
+            
+                    
+                    6.多语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="7.http.html">
+            
+                <a href="7.http.html">
+            
+                    
+                    7.http 应用开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="8.event.html">
+            
+                <a href="8.event.html">
+            
+                    
+                    8.事件总线框架的设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="12.1" data-path="9.dt.html">
+            
+                <a href="9.dt.html">
+            
+                    
+                    9.动态代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="13.1" data-path="10.web.html">
+            
+                <a href="10.web.html">
+            
+                    
+                    10.Web 框架定制开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="14.1" data-path="11.mapper.html">
+            
+                <a href="11.mapper.html">
+            
+                    
+                    11.对象映射框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >1.模块化和自动服务注册</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x6A21;&#x5757;&#x5316;&#x548C;&#x81EA;&#x52A8;&#x670D;&#x52A1;&#x6CE8;&#x518C;"><b></b>&#x6A21;&#x5757;&#x5316;&#x548C;&#x81EA;&#x52A8;&#x670D;&#x52A1;&#x6CE8;&#x518C;</a></li><ul><ul><li><span class="title-icon "></span><a href="#&#x5FEB;&#x901F;&#x5165;&#x624B;"><b></b>&#x5FEB;&#x901F;&#x5165;&#x624B;</a></li><li><span class="title-icon "></span><a href="#&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;"><b></b>&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;</a></li><li><span class="title-icon "></span><a href="#&#x6A21;&#x5757;&#x5316;"><b></b>&#x6A21;&#x5757;&#x5316;</a></li><li><span class="title-icon "></span><a href="#&#x6A21;&#x5757;&#x521D;&#x59CB;&#x5316;&#x987A;&#x5E8F;"><b></b>&#x6A21;&#x5757;&#x521D;&#x59CB;&#x5316;&#x987A;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#&#x670D;&#x52A1;&#x81EA;&#x52A8;&#x6CE8;&#x518C;"><b></b>&#x670D;&#x52A1;&#x81EA;&#x52A8;&#x6CE8;&#x518C;</a></li></ul></ul></ul></div><h1 id="&#x6A21;&#x5757;&#x5316;&#x548C;&#x81EA;&#x52A8;&#x670D;&#x52A1;&#x6CE8;&#x518C;"><a name="&#x6A21;&#x5757;&#x5316;&#x548C;&#x81EA;&#x52A8;&#x670D;&#x52A1;&#x6CE8;&#x518C;" class="anchor-navigation-ex-anchor" href="#&#x6A21;&#x5757;&#x5316;&#x548C;&#x81EA;&#x52A8;&#x670D;&#x52A1;&#x6CE8;&#x518C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6A21;&#x5757;&#x5316;&#x548C;&#x81EA;&#x52A8;&#x670D;&#x52A1;&#x6CE8;&#x518C;</h1>
+<p>&#x57FA;&#x4E8E; ASP.NET Core &#x5F00;&#x53D1;&#x7684; Web &#x6846;&#x67B6;&#x4E2D;&#xFF0C;&#x6700;&#x8457;&#x540D;&#x7684;&#x662F; ABP&#xFF0C;ABP &#x4E3B;&#x8981;&#x7279;&#x70B9;&#x4E4B;&#x4E00;&#x5F00;&#x53D1;&#x4E0D;&#x540C;&#x9879;&#x76EE;(&#x7A0B;&#x5E8F;&#x96C6;)&#x65F6;&#xFF0C;&#x5728;&#x6BCF;&#x4E2A;&#x9879;&#x76EE;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x7C7B;&#xFF0C;&#x7A0B;&#x5E8F;&#x52A0;&#x8F7D;&#x6BCF;&#x4E2A;&#x7A0B;&#x5E8F;&#x96C6;&#x4E2D;&#xFF0C;&#x626B;&#x63CF;&#x51FA;&#x6240;&#x6709;&#x7684;&#x6A21;&#x5757;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x6A21;&#x5757;&#x7C7B;&#x4F5C;&#x4E3A;&#x5165;&#x53E3;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x7A0B;&#x5E8F;&#x96C6;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x6A21;&#x5757;&#x5316;&#x5F00;&#x53D1;&#x7A0B;&#x5E8F;&#xFF0C;&#x597D;&#x5904;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x7A0B;&#x5E8F;&#x96C6;&#x5982;&#x4F55;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x3002;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5F00;&#x53D1;&#x7A0B;&#x5E8F;&#x96C6;&#x65F6;&#xFF0C;&#x5728;&#x6A21;&#x5757;&#x7C7B;&#x4E2D;&#x914D;&#x7F6E;&#x5982;&#x4F55;&#x521D;&#x59CB;&#x5316;&#x3001;&#x5982;&#x4F55;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#xFF0C;&#x4F7F;&#x7528;&#x8005;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x6A21;&#x5757;&#x7C7B;&#x5F15;&#x5165;&#x8FDB;&#x6765;&#x5373;&#x53EF;&#xFF0C;&#x7531;&#x6846;&#x67B6;&#x81EA;&#x52A8;&#x542F;&#x52A8;&#x6A21;&#x5757;&#x7C7B;&#x3002;</p>
+<p>Maomi.Core &#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x6A21;&#x5757;&#x5316;&#x5F00;&#x53D1;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x5305;&#x62EC;&#x7B80;&#x5355;&#x6613;&#x7528;&#x7684;&#x81EA;&#x52A8;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x3002;Maomi.Core &#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x7B80;&#x6D01;&#x7684;&#x5305;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x3001;Web &#x9879;&#x76EE;&#x3001;WPF &#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x5728; WPF &#x9879;&#x76EE;&#x4E2D;&#x7ED3;&#x5408; MVVM &#x53EF;&#x4EE5;&#x5927;&#x91CF;&#x51CF;&#x5C11;&#x4EE3;&#x7801;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x8BA9;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#x660E;&#x6717;&#x3002;</p>
+<h3 id="&#x5FEB;&#x901F;&#x5165;&#x624B;"><a name="&#x5FEB;&#x901F;&#x5165;&#x624B;" class="anchor-navigation-ex-anchor" href="#&#x5FEB;&#x901F;&#x5165;&#x624B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5FEB;&#x901F;&#x5165;&#x624B;</h3>
+<p>&#x6709; Demo1.Api&#x3001;Demo1.Application &#x4E24;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x6BCF;&#x4E2A;&#x9879;&#x76EE;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x7C7B;&#xFF0C;&#x6A21;&#x5757;&#x7C7B;&#x9700;&#x8981;&#x5B9E;&#x73B0; IModule &#x63A5;&#x53E3;&#x3002;</p>
+<p><img src="images/image-20240218083153329.png" alt="image-20240218083153329"></p>
+<p>Demo1.Application &#x9879;&#x76EE;&#x7684; ApplicationModule.cs &#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ApplicationModule</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IModule</span></span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// &#x6A21;&#x5757;&#x7C7B;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;</span>
+    <span class="token keyword">private</span> <span class="token keyword">readonly</span> <span class="token class-name">IConfiguration</span> _configuration<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">ApplicationModule</span><span class="token punctuation">(</span><span class="token class-name">IConfiguration</span> configuration<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        _configuration <span class="token operator">=</span> configuration<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">ConfigureServices</span><span class="token punctuation">(</span><span class="token class-name">ServiceContext</span> services<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// &#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x6A21;&#x5757;&#x521D;&#x59CB;&#x5316;&#x4EE3;&#x7801;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x8981;&#x5C06;&#x670D;&#x52A1;&#x81EA;&#x52A8;&#x6CE8;&#x518C;&#x5230;&#x5BB9;&#x5668;&#x4E2D;&#xFF0C;&#x5728;&#x7C7B;&#x578B;&#x4E0A;&#x52A0;&#x4E0A; <code>[InjectOnScoped]</code> &#x7279;&#x6027;&#x5373;&#x53EF;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IMyService</span>
+<span class="token punctuation">{</span>
+    <span class="token return-type class-name"><span class="token keyword">int</span></span> <span class="token function">Sum</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> a<span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">int</span></span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">InjectOnScoped</span></span><span class="token punctuation">]</span> <span class="token comment">// &#x81EA;&#x52A8;&#x6CE8;&#x518C;&#x7684;&#x6807;&#x8BB0;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyService</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IMyService</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> <span class="token function">Sum</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> a<span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">int</span></span> b<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>&#x7B49;&#x540C;&#x4E8E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp">service<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddScoped</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>IMyService<span class="token punctuation">,</span> MyService<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</blockquote>
+<p>&#x4E0A;&#x5C42;&#x6A21;&#x5757; Demo1.Api &#x4E2D;&#x7684; ApiModule.cs &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7279;&#x6027;&#x6CE8;&#x89E3;&#x5F15;&#x7528;&#x5E95;&#x5C42;&#x6A21;&#x5757;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>Reflection</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">InjectModule&lt;ApplicationModule&gt;</span></span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ApiModule</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IModule</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">ConfigureServices</span><span class="token punctuation">(</span><span class="token class-name">ServiceContext</span> services<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// &#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x6A21;&#x5757;&#x521D;&#x59CB;&#x5316;&#x4EE3;&#x7801;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x6700;&#x540E;&#xFF0C;&#x5728;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x65F6;&#x914D;&#x7F6E;&#x6A21;&#x5757;&#x5165;&#x53E3;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token class-name"><span class="token keyword">var</span></span> builder <span class="token operator">=</span> WebApplication<span class="token punctuation">.</span><span class="token function">CreateBuilder</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+builder<span class="token punctuation">.</span>Services<span class="token punctuation">.</span><span class="token function">AddControllers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+builder<span class="token punctuation">.</span>Services<span class="token punctuation">.</span><span class="token function">AddEndpointsApiExplorer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+builder<span class="token punctuation">.</span>Services<span class="token punctuation">.</span><span class="token function">AddSwaggerGen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// &#x6CE8;&#x518C;&#x6A21;&#x5757;&#x5316;&#x670D;&#x52A1;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E; ApiModule &#x4E3A;&#x5165;&#x53E3;</span>
+builder<span class="token punctuation">.</span>Services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddModule</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>ApiModule<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name"><span class="token keyword">var</span></span> app <span class="token operator">=</span> builder<span class="token punctuation">.</span><span class="token function">Build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;"><a name="&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;" class="anchor-navigation-ex-anchor" href="#&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;</h3>
+<p>&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x9700;&#x8981;&#x5B9E;&#x73B0; IModule &#x63A5;&#x53E3;&#xFF0C;&#x5176;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token comment">/// &lt;summary&gt;</span>
+<span class="token comment">/// &#x6A21;&#x5757;&#x63A5;&#x53E3;</span>
+<span class="token comment">/// &lt;/summary&gt;</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IModule</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">/// &lt;summary&gt;</span>
+    <span class="token comment">/// &#x6A21;&#x5757;&#x4E2D;&#x7684;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;</span>
+    <span class="token comment">/// &lt;/summary&gt;</span>
+    <span class="token comment">/// &lt;param name=&quot;context&quot;&gt;&#x6A21;&#x5757;&#x670D;&#x52A1;&#x4E0A;&#x4E0B;&#x6587;&lt;/param&gt;</span>
+    <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">ConfigureServices</span><span class="token punctuation">(</span><span class="token class-name">ServiceContext</span> context<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5728; ASP.NET Core &#x914D;&#x7F6E; Host &#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x6CE8;&#x5165;&#x4E00;&#x4E9B;&#x6846;&#x67B6;&#x4F9D;&#x8D56;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x5982; IConfiguration &#x7B49;&#xFF0C;&#x56E0;&#x6B64;&#x5728; <code>.AddModule<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ApiModule</span><span class="token punctuation">&gt;</span></span>()</code> &#x5F00;&#x59CB;&#x521D;&#x59CB;&#x5316;&#x6A21;&#x5757;&#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x6A21;&#x5757;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x5DF2;&#x7ECF;&#x6CE8;&#x5165;&#x7684;&#x670D;&#x52A1;&#x3002;</p>
+<p><img src="images/image-20240218164324287.png" alt="image-20240218164324287"></p>
+<pre class="language-"><code class="lang-cs"><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">InjectModule&lt;ApplicationModule&gt;</span></span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ApiModule</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IModule</span></span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">readonly</span> <span class="token class-name">IConfiguration</span> _configuration<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">readonly</span> <span class="token class-name">IHostEnvironment</span> _hostEnvironment<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">ApiModule</span><span class="token punctuation">(</span><span class="token class-name">IConfiguration</span> configuration<span class="token punctuation">,</span> <span class="token class-name">IHostEnvironment</span> hostEnvironment<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        _configuration <span class="token operator">=</span> configuration<span class="token punctuation">;</span>
+        _hostEnvironment <span class="token operator">=</span> hostEnvironment<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">ConfigureServices</span><span class="token punctuation">(</span><span class="token class-name">ServiceContext</span> context<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> configuration <span class="token operator">=</span> context<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
+        context<span class="token punctuation">.</span>Services<span class="token punctuation">.</span><span class="token function">AddCors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;&#x6A21;&#x5757;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6CE8;&#x5165;&#x670D;&#x52A1;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>ServiceContext context</code> &#x83B7;&#x53D6;&#x670D;&#x52A1;&#x548C;&#x914D;&#x7F6E;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp">    <span class="token comment">/// &lt;summary&gt;</span>
+    <span class="token comment">/// &#x6A21;&#x5757;&#x4E0A;&#x4E0B;&#x6587;</span>
+    <span class="token comment">/// &lt;/summary&gt;</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ServiceContext</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">private</span> <span class="token keyword">readonly</span> <span class="token class-name">IServiceCollection</span> _serviceCollection<span class="token punctuation">;</span>
+        <span class="token keyword">private</span> <span class="token keyword">readonly</span> <span class="token class-name">IConfiguration</span> _configuration<span class="token punctuation">;</span>
+
+
+        <span class="token keyword">internal</span> <span class="token function">ServiceContext</span><span class="token punctuation">(</span><span class="token class-name">IServiceCollection</span> serviceCollection<span class="token punctuation">,</span> <span class="token class-name">IConfiguration</span> configuration<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            _serviceCollection <span class="token operator">=</span> serviceCollection<span class="token punctuation">;</span>
+            _configuration <span class="token operator">=</span> configuration<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">/// &lt;summary&gt;</span>
+        <span class="token comment">/// &#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x670D;&#x52A1;</span>
+        <span class="token comment">/// &lt;/summary&gt;</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name">IServiceCollection</span> Services <span class="token operator">=&gt;</span> _serviceCollection<span class="token punctuation">;</span>
+
+        <span class="token comment">/// &lt;summary&gt;</span>
+        <span class="token comment">/// &#x914D;&#x7F6E;</span>
+        <span class="token comment">/// &lt;/summary&gt;</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name">IConfiguration</span> Configuration <span class="token operator">=&gt;</span> _configuration<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x6A21;&#x5757;&#x5316;"><a name="&#x6A21;&#x5757;&#x5316;" class="anchor-navigation-ex-anchor" href="#&#x6A21;&#x5757;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6A21;&#x5757;&#x5316;</h3>
+<p>&#x56E0;&#x4E3A;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x4F1A;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x4E3A;&#x4E86;&#x8BC6;&#x522B;&#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;Maomi.Core &#x4F7F;&#x7528;&#x6811;&#x6765;&#x8868;&#x8FBE;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002;Maomi.Core &#x5728;&#x542F;&#x52A8;&#x6A21;&#x5757;&#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x626B;&#x63CF;&#x6240;&#x6709;&#x6A21;&#x5757;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x6A21;&#x5757;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x5B58;&#x653E;&#x5230;&#x6A21;&#x5757;&#x6811;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x6309;&#x7167;&#x5DE6;&#x5E8F;&#x904D;&#x5386;&#x7684;&#x7B97;&#x6CD5;&#x5BF9;&#x6A21;&#x5757;&#x9010;&#x4E2A;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5148;&#x4ECE;&#x5E95;&#x5C42;&#x6A21;&#x5757;&#x5F00;&#x59CB;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
+<h4 id="&#x5FAA;&#x73AF;&#x4F9D;&#x8D56;&#x68C0;&#x6D4B;"><a name="&#x5FAA;&#x73AF;&#x4F9D;&#x8D56;&#x68C0;&#x6D4B;" class="anchor-navigation-ex-anchor" href="#&#x5FAA;&#x73AF;&#x4F9D;&#x8D56;&#x68C0;&#x6D4B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5FAA;&#x73AF;&#x4F9D;&#x8D56;&#x68C0;&#x6D4B;</h4>
+<p>Maomi.Core &#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x6A21;&#x5757;&#x5FAA;&#x73AF;&#x4F9D;&#x8D56;</p>
+<p>&#x6BD4;&#x5982;&#xFF0C;&#x6709;&#x4EE5;&#x4E0B;&#x6A21;&#x5757;&#x548C;&#x4F9D;&#x8D56;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token punctuation">[</span><span class="token generic-method"><span class="token function">InjectModule</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>A<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token generic-method"><span class="token function">InjectModule</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>B<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">:</span>IModule
+
+<span class="token punctuation">[</span><span class="token generic-method"><span class="token function">InjectModule</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>A<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">class</span> <span class="token class-name">B</span><span class="token punctuation">:</span><span class="token type-list"><span class="token class-name">IModule</span></span>
+
+<span class="token comment">// &#x8FD9;&#x91CC;&#x51FA;&#x73B0;&#x4E86;&#x5FAA;&#x73AF;&#x4F9D;&#x8D56;</span>
+<span class="token punctuation">[</span><span class="token generic-method"><span class="token function">InjectModule</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>C<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span><span class="token type-list"><span class="token class-name">IModule</span></span>
+
+<span class="token comment">// C &#x662F;&#x5165;&#x53E3;&#x6A21;&#x5757;</span>
+services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddModule</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>C<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x56E0;&#x4E3A; C &#x6A21;&#x5757;&#x4F9D;&#x8D56; A&#x3001;B &#x6A21;&#x5757;&#xFF0C;&#x6240;&#x4EE5; A&#x3001;B &#x662F;&#x8282;&#x70B9; C &#x7684;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x800C; A&#x3001;B &#x7684;&#x7236;&#x8282;&#x70B9;&#x5219;&#x662F; C&#x3002;&#x5F53;&#x628A; A&#x3001;B&#x3001;C &#x4E09;&#x4E2A;&#x6A21;&#x5757;&#x4EE5;&#x53CA;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x626B;&#x63CF;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x5F97;&#x5230;&#x4EE5;&#x4E0B;&#x7684;&#x6A21;&#x5757;&#x4F9D;&#x8D56;&#x6811;&#x3002;</p>
+<p>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x505A;&#x4E86;&#x4E0B;&#x6807;&#xFF0C;&#x8868;&#x793A;&#x4E0D;&#x540C;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x591A;&#x6B21;&#xFF0C;<code>C1 -&gt; A0</code> &#x8868;&#x793A; C &#x4F9D;&#x8D56; A&#x3002;</p>
+<p><img src="images/image-20240218165015839.png" alt="image-20240218165015839"></p>
+<p>C<sub>0</sub> &#x5F00;&#x59CB;&#xFF0C;&#x6CA1;&#x6709;&#x7236;&#x8282;&#x70B9;&#xFF0C;&#x5219;&#x4E0D;&#x5B58;&#x5728;&#x5FAA;&#x73AF;&#x4F9D;&#x8D56;&#x3002;</p>
+<p>&#x4ECE; A<sub>0</sub> &#x5F00;&#x59CB;&#xFF0C;A<sub>0</sub> -&gt; C<sub>0</sub> &#xFF0C;&#x8BE5;&#x94FE;&#x8DEF;&#x4E2D;&#x4E5F;&#x6CA1;&#x6709;&#x51FA;&#x73B0;&#x91CD;&#x590D;&#x7684; A &#x6A21;&#x5757;&#x3002;</p>
+<p>&#x4ECE; C<sub>1</sub> &#x5F00;&#x59CB;&#xFF0C;C<sub>1</sub> -&gt; A<sub>0</sub> -&gt; C<sub>0</sub> &#xFF0C;&#x8BE5;&#x94FE;&#x8DEF;&#x4E2D; C &#x6A21;&#x5757;&#x91CD;&#x590D;&#x51FA;&#x73B0;&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x51FA;&#x73B0;&#x4E86;&#x5FAA;&#x73AF;&#x4F9D;&#x8D56;&#x3002;</p>
+<p>&#x4ECE; C<sub>2</sub> &#x5F00;&#x59CB;&#xFF0C;C<sub>2</sub> -&gt; A<sub>1</sub> -&gt; B<sub>0</sub> -&gt; C<sub>0</sub> &#xFF0C;&#x8BE5;&#x94FE;&#x8DEF;&#x4E2D; C &#x6A21;&#x5757;&#x91CD;&#x590D;&#x51FA;&#x73B0;&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x51FA;&#x73B0;&#x4E86;&#x5FAA;&#x73AF;&#x4F9D;&#x8D56;&#x3002;</p>
+<h3 id="&#x6A21;&#x5757;&#x521D;&#x59CB;&#x5316;&#x987A;&#x5E8F;"><a name="&#x6A21;&#x5757;&#x521D;&#x59CB;&#x5316;&#x987A;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x6A21;&#x5757;&#x521D;&#x59CB;&#x5316;&#x987A;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6A21;&#x5757;&#x521D;&#x59CB;&#x5316;&#x987A;&#x5E8F;</h3>
+<p>&#x5728;&#x751F;&#x6210;&#x6A21;&#x5757;&#x6811;&#x4E4B;&#x540E;&#xFF0C;&#x901A;&#x8FC7;&#x5BF9;&#x6A21;&#x5757;&#x6811;&#x8FDB;&#x884C;&#x540E;&#x5E8F;&#x904D;&#x5386;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#xFF0C;&#x6709;&#x4EE5;&#x4E0B;&#x6A21;&#x5757;&#x4EE5;&#x53CA;&#x4F9D;&#x8D56;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token punctuation">[</span><span class="token generic-method"><span class="token function">InjectModule</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>C<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token generic-method"><span class="token function">InjectModule</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>D<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">class</span> <span class="token class-name">E</span><span class="token punctuation">:</span>IModule
+
+<span class="token punctuation">[</span><span class="token generic-method"><span class="token function">InjectModule</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>A<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token generic-method"><span class="token function">InjectModule</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>B<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">:</span>IModule
+
+<span class="token punctuation">[</span><span class="token generic-method"><span class="token function">InjectModule</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>B<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">class</span> <span class="token class-name">D</span><span class="token punctuation">:</span>IModule
+
+<span class="token punctuation">[</span><span class="token generic-method"><span class="token function">InjectModule</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>A<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">class</span> <span class="token class-name">B</span><span class="token punctuation">:</span>IModule
+
+<span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span><span class="token type-list"><span class="token class-name">IModule</span></span>
+
+<span class="token comment">// E &#x662F;&#x5165;&#x53E3;&#x6A21;&#x5757;</span>
+services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddModule</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>E<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x751F;&#x6210;&#x6A21;&#x5757;&#x4F9D;&#x8D56;&#x6811;&#x5982;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="images/&#x4F9D;&#x8D56;2.png" alt="&#x4F9D;&#x8D56;2"></p>
+<p>&#x9996;&#x5148;&#x4ECE; E<sub>0</sub> &#x5F00;&#x59CB;&#x626B;&#x63CF;&#xFF0C;&#x56E0;&#x4E3A; E<sub>0</sub> &#x4E0B;&#x5B58;&#x5728;&#x5B50;&#x8282;&#x70B9; C<sub>0</sub>&#x3001; D<sub>0</sub>&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x5148;&#x987A;&#x7740; C<sub>0</sub> &#x518D;&#x6B21;&#x626B;&#x63CF;&#xFF0C;&#x626B;&#x63CF;&#x5230; A<sub>0</sub> &#x65F6;&#xFF0C;&#x56E0;&#x4E3A; A<sub>0</sub> &#x4E0B;&#x5DF2;&#x7ECF;&#x6CA1;&#x6709;&#x5B50;&#x8282;&#x70B9;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x5BF9; A<sub>0</sub> &#x5BF9;&#x5E94;&#x7684;&#x6A21;&#x5757; A &#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#x3002;&#x6839;&#x636E;&#x4E0A;&#x56FE;&#x6A21;&#x5757;&#x4F9D;&#x8D56;&#x6811;&#x8FDB;&#x884C;&#x540E;&#x5E8F;&#x904D;&#x5386;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x6A21;&#x5757;&#x7684;&#x987A;&#x5E8F;&#x662F;&#xFF08;&#x5DF2;&#x7ECF;&#x88AB;&#x521D;&#x59CB;&#x5316;&#x7684;&#x6A21;&#x5757;&#x4F1A;&#x8DF3;&#x8FC7;&#xFF09;&#xFF1A;</p>
+<p><img src="images/&#x521D;&#x59CB;&#x5316;&#x987A;&#x5E8F;.png" alt="&#x521D;&#x59CB;&#x5316;&#x987A;&#x5E8F;"></p>
+<h3 id="&#x670D;&#x52A1;&#x81EA;&#x52A8;&#x6CE8;&#x518C;"><a name="&#x670D;&#x52A1;&#x81EA;&#x52A8;&#x6CE8;&#x518C;" class="anchor-navigation-ex-anchor" href="#&#x670D;&#x52A1;&#x81EA;&#x52A8;&#x6CE8;&#x518C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x670D;&#x52A1;&#x81EA;&#x52A8;&#x6CE8;&#x518C;</h3>
+<p>Maomi.Core &#x662F;&#x901A;&#x8FC7; <code>[InjectOn]</code> &#x8BC6;&#x522B;&#x8981;&#x6CE8;&#x518C;&#x8BE5;&#x670D;&#x52A1;&#x5230;&#x5BB9;&#x5668;&#x4E2D;&#xFF0C;&#x5176;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp">    <span class="token comment">/// &lt;summary&gt;</span>
+    <span class="token comment">/// &#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x6807;&#x8BB0;</span>
+    <span class="token comment">/// &lt;/summary&gt;</span>
+    <span class="token punctuation">[</span><span class="token function">AttributeUsage</span><span class="token punctuation">(</span>AttributeTargets<span class="token punctuation">.</span>Class<span class="token punctuation">,</span> AllowMultiple <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">,</span> Inherited <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InjectOnAttribute</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">Attribute</span></span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">/// &lt;summary&gt;</span>
+        <span class="token comment">/// &#x8981;&#x6CE8;&#x5165;&#x7684;&#x670D;&#x52A1;</span>
+        <span class="token comment">/// &lt;/summary&gt;</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name">Type<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">?</span></span> ServicesType <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+        <span class="token comment">/// &lt;summary&gt;</span>
+        <span class="token comment">/// &#x751F;&#x547D;&#x5468;&#x671F;</span>
+        <span class="token comment">/// &lt;/summary&gt;</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name">ServiceLifetime</span> Lifetime <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+        <span class="token comment">/// &lt;summary&gt;</span>
+        <span class="token comment">/// &#x6CE8;&#x5165;&#x6A21;&#x5F0F;</span>
+        <span class="token comment">/// &lt;/summary&gt;</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name">InjectScheme</span> Scheme <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+        <span class="token comment">/// &lt;summary&gt;</span>
+        <span class="token comment">/// &#x662F;&#x5426;&#x6CE8;&#x5165;&#x81EA;&#x5DF1;</span>
+        <span class="token comment">/// &lt;/summary&gt;</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">bool</span></span> Own <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+        <span class="token comment">/// &lt;summary&gt;</span>
+        <span class="token comment">/// </span>
+        <span class="token comment">/// &lt;/summary&gt;</span>
+        <span class="token comment">/// &lt;param name=&quot;lifetime&quot;&gt;&lt;/param&gt;</span>
+        <span class="token comment">/// &lt;param name=&quot;scheme&quot;&gt;&lt;/param&gt;</span>
+        <span class="token keyword">public</span> <span class="token function">InjectOnAttribute</span><span class="token punctuation">(</span><span class="token class-name">ServiceLifetime</span> lifetime <span class="token operator">=</span> ServiceLifetime<span class="token punctuation">.</span>Transient<span class="token punctuation">,</span> <span class="token class-name">InjectScheme</span> scheme <span class="token operator">=</span> InjectScheme<span class="token punctuation">.</span>OnlyInterfaces<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Lifetime <span class="token operator">=</span> lifetime<span class="token punctuation">;</span>
+            Scheme <span class="token operator">=</span> scheme<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4F7F;&#x7528; <code>[InjectOn]</code> &#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x6CE8;&#x518C;&#x670D;&#x52A1;&#x4E3A; <code>Transient</code> &#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x4E14;&#x6CE8;&#x518C;&#x6240;&#x6709;&#x63A5;&#x53E3;&#x3002;</p>
+<pre class="language-"><code class="lang-csharp">    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">InjectOn</span></span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyService</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IAService</span><span class="token punctuation">,</span> <span class="token class-name">IBService</span></span>
+</code></pre>
+<p>&#x7B49;&#x540C;&#x4E8E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp">services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddTransient</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>IAService<span class="token punctuation">,</span> MyService<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddTransient</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>IBService<span class="token punctuation">,</span> MyService<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x53EA;&#x60F3;&#x6CE8;&#x518C; <code>IAService</code>&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x6CE8;&#x518C;&#x6A21;&#x5F0F;&#x8BBE;&#x7F6E;&#x4E3A;<code>InjectScheme.Some</code> &#xFF0C;&#x7136;&#x540E;&#x81EA;&#x5B9A;&#x4E49;&#x6CE8;&#x518C;&#x7684;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp">    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">InjectOn</span><span class="token attribute-arguments"><span class="token punctuation">(</span>
+        <span class="token named-parameter punctuation">lifetime</span><span class="token punctuation">:</span> ServiceLifetime<span class="token punctuation">.</span>Transient<span class="token punctuation">,</span>
+        Scheme <span class="token operator">=</span> InjectScheme<span class="token punctuation">.</span>Some<span class="token punctuation">,</span>
+        ServicesType <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Type<span class="token punctuation">[</span><span class="token punctuation">]</span></span> <span class="token punctuation">{</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">IAService</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyService</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IAService</span><span class="token punctuation">,</span> <span class="token class-name">IBService</span></span>
+</code></pre>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x628A;&#x81EA;&#x8EAB;&#x6CE8;&#x518C;&#x5230;&#x5BB9;&#x5668;&#x4E2D;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp">    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">InjectOn</span><span class="token attribute-arguments"><span class="token punctuation">(</span>Own <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyService</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IMyService</span></span>
+</code></pre>
+<p>&#x7B49;&#x540C;&#x4E8E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp">services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddTransient</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>IAService<span class="token punctuation">,</span> MyService<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddTransient</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>MyService<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x670D;&#x52A1;&#x7EE7;&#x627F;&#x4E86;&#x7C7B;&#x3001;&#x63A5;&#x53E3;&#xFF0C;&#x53EA;&#x60F3;&#x6CE8;&#x518C;&#x7236;&#x7C7B;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp">    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ParentService</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">InjectOn</span><span class="token attribute-arguments"><span class="token punctuation">(</span>
+        Scheme <span class="token operator">=</span> InjectScheme<span class="token punctuation">.</span>OnlyBaseClass
+        <span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyService</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">ParentService</span><span class="token punctuation">,</span> <span class="token class-name">IDisposable</span></span>
+</code></pre>
+<p>&#x7B49;&#x540C;&#x4E8E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp">services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddTransient</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>ParentService<span class="token punctuation">,</span> MyService<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+services<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">AddTransient</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>MyService<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x53EA;&#x6CE8;&#x518C;&#x81EA;&#x8EAB;&#xFF0C;&#x5FFD;&#x7565;&#x63A5;&#x53E3;&#x7B49;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-csharp"><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">InjectOn</span><span class="token attribute-arguments"><span class="token punctuation">(</span>ServiceLifetime<span class="token punctuation">.</span>Scoped<span class="token punctuation">,</span> Scheme <span class="token operator">=</span> InjectScheme<span class="token punctuation">.</span>None<span class="token punctuation">,</span> Own <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x75F4;&#x8005;&#x5DE5;&#x826F; 2024 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x6863;&#x6700;&#x540E;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A;
+2025-01-02 08:35:32
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="2.design_module.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 2.模块化和自动服务注册的设计和实现">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.模块化和自动服务注册","level":"1.3.1","depth":2,"next":{"title":"2.模块化和自动服务注册的设计和实现","level":"2.1","depth":1,"path":"2.design_module.md","ref":"2.design_module.md","articles":[]},"previous":{"title":"设计篇","level":"1.3","depth":1,"ref":"","articles":[{"title":"1.模块化和自动服务注册","level":"1.3.1","depth":2,"path":"1.module.md","ref":"1.module.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","anchor-navigation-ex","mermaid-gb3","insert-logo","chapter-fold","advanced-emoji","github","splitter","alerts","popup","prism","hide-element","head-append","-highlight","-livereload","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 痴者工良 2024","modify_label":"文档最后更新时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"lang":{"flow":"typescript","shell":"bash"},"ignore":["mermaid","eval-js"],"css":["prismjs/themes/prism.css"],"js":["prismjs/prism.js","prismjs/components.js","prismjs/components/prism-csharp.min.js","prismjs/components/prism-go.min.js","prismjs/components/prism-yaml.min.js","prismjs/components/prism-bash.min.js","prismjs/components/prism-shell-session.min.js"]},"github":{"url":"https://github.com/whuanle/maomi_doc"},"splitter":{},"head-append":{"code":["<SCRIPTTAG>","var _hmt = _hmt || [];","(function() {","})();","</SCRIPTTAG>"]},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":true,"mode":"float","showGoTop":false,"printLog":false,"multipleH1":true,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"alerts":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 50px; min-height: 50px","url":"/images/logo.jpg"}},"theme":"default","author":"痴者工良","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Maomi 开发框架文档- 痴者工良","language":"zh-hans","links":{"sidebar":{"痴者工良的博客":"https://www.whuanle.cn","粤ICP备18051778号":"https://beian.miit.gov.cn/"}},"gitbook":"*","description":"介绍 Maomi 框架如何使用、如何设计，作者 痴者工良"},"file":{"path":"1.module.md","mtime":"2025-01-02T00:35:32.441Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-06T00:56:59.737Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
